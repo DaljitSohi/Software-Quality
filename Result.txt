@@ -1,0 +1,4 @@
+CC_AAAAAAAAAAAAAAAAAAAA_NNNNN_PPPPPPPP_MM
+10 Neil                 00004 00000000 S 
+01 Neil                 00004 00400.00   
+00 Neil                 00004 00000000 S 

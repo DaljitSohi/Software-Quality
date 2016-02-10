@@ -1,0 +1,6 @@
+login admin
+transfer 00001 5000.00
+transferto standard Neil
+logout admin
+login standard Neil
+logout standard Neil

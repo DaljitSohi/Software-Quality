@@ -1,0 +1,3 @@
+login admin
+withdraw 000001 700.00
+logout admin

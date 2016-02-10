@@ -1,0 +1,5 @@
+login standard matt
+login standard nick
+logout
+login standard nick
+logout

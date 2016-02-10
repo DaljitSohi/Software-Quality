@@ -1,0 +1,3 @@
+login admin
+disable Nick 0008
+logout

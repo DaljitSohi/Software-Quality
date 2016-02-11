@@ -1,0 +1,4 @@
+<command>: <error message>
+
+paybill: Invalid Account Number 
+

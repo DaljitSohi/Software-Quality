@@ -1,0 +1,4 @@
+<command>: <error message>
+
+deposit: Invalid Account Access
+

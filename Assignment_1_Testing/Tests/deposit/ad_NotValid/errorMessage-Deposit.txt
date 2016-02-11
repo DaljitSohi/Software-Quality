@@ -1,0 +1,6 @@
+<command>: <error message>
+
+ 
+4. deposit: Invalid Account Holder Name
+4. deposit: Invalid Account Number 
+

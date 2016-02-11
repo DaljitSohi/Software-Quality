@@ -16,9 +16,9 @@ do
 
 		if [ "$filediff" == "" ]; then
 			if [ "$filedifff" == "" ]; then
-				echo $(tput setaf 2)-e"\t"$tests "Test: Success" 
+				echo $(tput setaf 2)"  "$folder_name": "$tests "Test - Success" 
 			else
-				echo $(tput setaf 1)-e"\t"$tests "Test: Failure"
+				echo $(tput setaf 1)"  "$folder_name": "$tests "Test - Failure"
 				echo $tests "Testing: Started" >> log.txt
 				echo $tests "result.txt: Success" >> log.txt
 				echo $tests "Cresult.txt: Failure" >> log.txt
@@ -26,7 +26,7 @@ do
 				echo $tests "Testing: Complete" >> log.txt
 			fi
 		else
-			echo $(tput setaf 1)-e "\t"$tests "Test: Failure"
+			echo $(tput setaf 1)"  "$folder_name": "$tests "Test - Failure"
 			echo $tests "Testing: Started" >> log.txt
 			echo $tests "result.txt: Failure" >> log.txt
 			echo $tests "Cresult.txt: Unknown" >> log.txt
@@ -37,49 +37,3 @@ do
 	done
 done
 echo $(tput setaf 7)Done
-
-
-# for file_name in $( ls -d */ | grep -v login );
-# 	do
-# 		$program $file_name"/test.txt" > resultt.txt
-# 		filediff=$(diff $outputfile $file_name"/result.txt");
-# 		filedifff=$(diff resultt.txt $file_name"/resultC.txt");
-
-# 		if [ "$filediff" == "" ];then
-# 			echo $file_name "Test: Success" 
-# 		else
-# 			echo $file_name "Test: Failure" 
-# 			echo $filediff >> log.txt
-# 		fi
-# 	done
-
-
-
-
-
-# for file_name in $( ls | grep login );
-# 	do
-# 		$program $file_name"/test.txt"  > resultt.txt
-# 		filediff=$(diff $outputfile $file_name"/result.txt");
-
-# 		if [ "$filediff" == "" ];then
-# 			echo $file_name "Test: Success" 
-# 		else
-# 			echo $file_name "Test: Failure" 
-# 			echo $filediff >> log.txt
-# 		fi
-# 	done
-
-# for file_name in $( ls -d */ | grep -v login );
-# 	do
-# 		$program $file_name"/test.txt" > resultt.txt
-# 		filediff=$(diff $outputfile $file_name"/result.txt");
-# 		filedifff=$(diff resultt.txt $file_name"/resultC.txt");
-
-# 		if [ "$filediff" == "" ];then
-# 			echo $file_name "Test: Success" 
-# 		else
-# 			echo $file_name "Test: Failure" 
-# 			echo $filediff >> log.txt
-# 		fi
-# 	done

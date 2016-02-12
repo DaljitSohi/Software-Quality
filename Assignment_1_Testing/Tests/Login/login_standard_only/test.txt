@@ -1,0 +1,3 @@
+login standard matt
+create Nick 400.0
+logout

@@ -1,0 +1,3 @@
+login Admin 
+changeplan Sam-c 00019 NP
+logout

@@ -1,0 +1,3 @@
+login Admin
+deposit Daljit-a 00002 200.00
+logout

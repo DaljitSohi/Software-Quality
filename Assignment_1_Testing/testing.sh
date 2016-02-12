@@ -12,7 +12,7 @@ do
 		testfolder=$folder"/"$tests
 		./$program $testfolder"/test.txt" > resultt.txt
 		filediff=$(diff $outputfile $testfolder"/result.txt");
-		filedifff=$(diff resultt.txt $testfolder"/Cresult.txt");
+		filedifff=$(diff resultt.txt $testfolder"/commandlineResult.txt");
 
 		if [ "$filediff" == "" ]; then
 			if [ "$filedifff" == "" ]; then

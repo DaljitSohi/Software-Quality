@@ -5,6 +5,8 @@ run:
 clean:
 	rm main *.txt
 
-
 testing: run
 	./testing.sh main batf.txt Tests
+
+CreateTest: run
+	./testing.sh main batf.txt Tests Create

@@ -1,0 +1,3 @@
+login admin
+delete Nickk 00008
+logout

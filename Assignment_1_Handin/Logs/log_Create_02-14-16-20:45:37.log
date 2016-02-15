@@ -1,0 +1,47 @@
+
+create_admin_only Testing: Started
+	create_admin_only Result: Success
+	create_admin_only Command Line Result: Success
+create_admin_only Testing: Complete
+
+create_max_char_not_work Testing: Started
+	create_max_char_not_work Result: Failure
+	1,3c1,3 < 10 00000 00000.00 A < 05 Nick 00010 04000.00 < 00 00000 00000.00 A --- > 10 00000 00000000 A > 05 Nickjfutsletorisedsx 00010 00400.00 > 00 00000 00000000 A
+	create_max_char_not_work Command Line Result: Failure
+	0a1 > create: Invalid Character Amount - Shortened to 20 characters \ No newline at end of file
+create_max_char_not_work Testing: Complete
+
+create_max_char_working Testing: Started
+	create_max_char_working Result: Failure
+	1,3c1,3 < 10 00000 00000.00 A < 05 Nick 00010 04000.00 < 00 00000 00000.00 A --- > 10 00000 00000000 A > 05 Nickjfutsletorisedsx 00010 00400.00 > 00 00000 00000000 A
+	create_max_char_working Command Line Result: Success
+create_max_char_working Testing: Complete
+
+create_max_money_no_work Testing: Started
+	create_max_money_no_work Result: Failure
+	1,3c1,2 < 10 00000 00000.00 A < 05 Nick 00010 04000.00 < 00 00000 00000.00 A --- > 10 00000 00000000 A > 00 00000 00000000 A
+	create_max_money_no_work Command Line Result: Failure
+	0a1 > create: Invalid Input \ No newline at end of file
+create_max_money_no_work Testing: Complete
+
+create_max_money_working Testing: Started
+	create_max_money_working Result: Failure
+	1,3c1,3 < 10 00000 00000.00 A < 05 Nick 00010 04000.00 < 00 00000 00000.00 A --- > 10 00000 00000000 A > 05 Nickjfutsletorisedsx 00010 99999.99 > 00 00000 00000000 A
+	create_max_money_working Command Line Result: Success
+create_max_money_working Testing: Complete
+
+create_no_trans Testing: Started
+	create_no_trans Result: Failure
+	1,3c1,3 < 10 00000 00000.00 A < 05 Nick 00010 04000.00 < 00 00000 00000.00 A --- > 10 00000 00000000 A > 05 Nickjfutsletorisedsx 00010 99999.99 > 00 00000 00000000 A
+	create_no_trans Command Line Result: Failure
+	0a1 > withdrawal: Invalid Account Holder Name \ No newline at end of file
+create_no_trans Testing: Complete
+
+create_standard_try Testing: Started
+	create_standard_try Result: Failure
+	1,3c1,2 < 10 00000 00000.00 A < 05 Nick 00010 04000.00 < 00 00000 00000.00 A --- > 10 Matt 00009 00000000 S > 00 Matt 00009 00000000 S
+	create_standard_try Command Line Result: Failure
+	0a1 > create: Invalid Access
+create_standard_try Testing: Complete
+
+Time to Complete:  117 ms

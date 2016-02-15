@@ -1,0 +1,5 @@
+login standard Sam
+deposit 00016 300.00
+paybill 00016 "CQ" 300.00 
+logout 
+

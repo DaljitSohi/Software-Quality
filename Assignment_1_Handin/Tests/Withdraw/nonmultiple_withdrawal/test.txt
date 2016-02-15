@@ -1,0 +1,3 @@
+login standard Neil
+withdrawal 000005 23.00
+logout standard Neil

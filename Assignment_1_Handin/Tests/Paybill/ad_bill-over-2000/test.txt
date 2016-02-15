@@ -1,0 +1,3 @@
+login admin
+John-c 00009 "CQ"	3000.00
+logout

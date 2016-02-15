@@ -1,0 +1,11 @@
+The makefile and main.cpp is test code to show the running of the testing.sh script
+
+In order to test the script, use the command
+	
+	make testing
+
+To run th set of tests for an individual transaction, use the command
+
+	make ARGS="<Insert Transaction Name>" testing
+	ex.
+	make ARGS="Create" testing

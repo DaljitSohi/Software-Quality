@@ -1,3 +1,7 @@
+/*****************************
+*Formats data to ouput in the
+*correct manner
+*****************************/
 #ifndef FILEOUTFORMAT_H
 #define FILEOUTFORMAT_H
 

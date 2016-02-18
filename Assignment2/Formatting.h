@@ -1,3 +1,7 @@
+/*****************************
+*formats int to string, float to string
+*convert command number to command string, and vice versa 
+*****************************/
 #ifndef FORMATTING_H
 #define FORMATTING_H
 

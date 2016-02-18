@@ -1,3 +1,10 @@
+/*****************************
+*see's if it is command line or a file
+*spilt the data by line's
+*gets a token out of the line
+*send into the interperter to 
+*execute the command
+*****************************/
 #include "Formatting.h"
 #include "Token.h"
 #include "FileOutFormat.h"

@@ -1,3 +1,7 @@
+/*****************************
+*execute the commands of the system
+*holds all the current bank account
+*****************************/
 #ifndef TRANSACTION_H
 #define TRANSACTION_H
 

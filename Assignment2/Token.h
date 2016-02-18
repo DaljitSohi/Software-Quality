@@ -1,3 +1,7 @@
+/*****************************
+*data structure for the commandline input of the program
+*breaks the line up by spaces, and formats the data
+*****************************/
 #ifndef TOKEN_H
 #define TOKEN_H
 

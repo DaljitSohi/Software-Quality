@@ -1,3 +1,7 @@
+/*****************************
+*parses a line and adds splits the line according to the spaces
+*store the current bank account information for one bankaccount
+*****************************/
 #ifndef BANKACCOUNT_H
 #define BANKACCOUNT_H
 

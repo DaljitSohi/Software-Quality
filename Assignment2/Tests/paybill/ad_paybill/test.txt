@@ -1,0 +1,4 @@
+login admin
+paybill John-b 00008 "TV" 300.00
+logout
+

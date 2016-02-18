@@ -1,0 +1,3 @@
+login admin
+create Nickjfutsletorisedsx 99999.99
+logout

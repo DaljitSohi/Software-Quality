@@ -1,0 +1,28 @@
+<command>: <error message>
+
+
+<command>
+	deposit
+	withdrawal
+	login
+	logout
+	paybill
+	changeplan
+	create
+	delete
+	disable
+	enable
+	transfer
+
+
+<error message>
+	Invalid Input(could be negative or a character or value excceding 99999.99)
+	Invalid Amount(value above set limit of paybill transfer and withdrawal)
+	Invalid Account Holder Name
+	Invalid Account Number
+	Invalid Funds(amount in account < amount taken out)
+	Invalid Company Name
+	Invalid Plan Type
+	Invalid Access(admin only)
+	Invalid Account Access(disable/delete account)
+	Invalid Transaction(standard exception)

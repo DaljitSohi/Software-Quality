@@ -1,0 +1,3 @@
+login admin
+enable Nick 00009
+logout

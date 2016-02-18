@@ -1,0 +1,4 @@
+login admin
+disable Nick 00008
+withdrawal Nick 00008 400.00
+logout

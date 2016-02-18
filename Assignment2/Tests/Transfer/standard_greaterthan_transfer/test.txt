@@ -1,0 +1,6 @@
+login standard Neil
+transfer 00006 5000.00 
+transferto standard Sean 00005
+logout standard Neil
+login standard Sean
+logout standard Sean

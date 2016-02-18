@@ -1,0 +1,3 @@
+login admin
+paybill Sam-c 00002 "EC" 50.00
+logout

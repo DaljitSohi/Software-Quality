@@ -1,0 +1,4 @@
+login admin
+create Nickjfutsletorisedsx 99999.99
+withdrawal Nickjfutsletorisedsx 00010 99999.99
+logout

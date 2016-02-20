@@ -1,5 +1,5 @@
 login standard Neil
 deposit standard 00004 100.00
-logout standard Neil
+logout
 login admin 
-logout admin
+logout

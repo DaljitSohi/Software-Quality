@@ -1,0 +1,76 @@
+/*****************************
+*see's if it is command line or a file
+*spilt the data by line's
+*gets a token out of the line
+*send into the interperter to 
+*execute the command
+*****************************/
+#include "Formatting.h"
+#include "Token.h"
+#include "FileOutFormat.h"
+#include "Interpeter.h"
+#include "Transaction.h"
+
+#include <stdio.h>
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <sstream>
+#include <fstream>
+
+
+using namespace std;
+
+void OnCompleteLine(string line, Transaction& action)
+{
+	Token t = Token(line);
+	// cout << t;
+	Interpeter::InterpetToken(t, action);
+}
+
+int main(int argc, char** argv)
+{
+
+	// float num = 23.00f;
+	// int intpart = (int)num;
+	// float decpart = num - intpart; 
+
+	// cout << num << " " << intpart  << " "<< decpart << endl;
+	// cout << (decpart == 0.0f) << endl;
+	// cout << true << " " << false << endl;
+
+	bool isfile = false;
+	istream* input = &cin;
+	char c;
+	string line;
+	Transaction action("BankAccountTransaction.txt", "Current_Accounts.bank");
+
+	if(argc > 1){
+		input = new fstream(argv[1], fstream::in);
+		isfile = true;
+	}
+
+	while(input->get(c))
+	{
+		if(c == '\n' || c == '\r')
+		{
+			if(line.length() == 0)
+				continue;
+
+			OnCompleteLine(line, action);
+			line = "";
+			continue;
+		}
+		line += c;
+	}
+	if(line != "")
+	{
+		OnCompleteLine(line, action);
+		line = "";
+	}
+
+	if(isfile)
+		((fstream*)input)->close();
+	return 0;
+}

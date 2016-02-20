@@ -1,3 +1,3 @@
 login standard Neil
-logout standard Neil
+logout
 deposit standard 00005 20.00

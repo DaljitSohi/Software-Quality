@@ -1,18 +1,37 @@
 
 compile:
-	g++ *.cpp *.h -o frontend
+	g++  Code/*.cpp Code/*.h -o frontend
 
-run: compile
+run: onetest
+
+regularrun: compile
 	clear
-	./frontend
+	./frontend Tests/Create/create_admin_only/test.txt
+	
 clean:
-	rm frontend *.txt
+	rm frontend
 
 onetest: compile
-	./frontend Tests/Create/create_admin_only/test.txt
+	./oneTest.sh frontend BankAccountTransaction.txt Tests/Create/create_admin_only
+	cat Tests/Create/create_admin_only/*
 
 localtext: compile
 	./frontend test.tst
 
 testing: compile
-	./testing.sh frontend batf.txt Tests
+	./testing.sh frontend BankAccountTransaction.txt Tests
+
+login: compile
+	./testing.sh frontend BankAccountTransaction.txt Tests Login
+
+login2:
+	./testing.sh frontend BankAccountTransaction.txt Tests Login
+
+withdrawal: compile
+	./testing.sh frontend BankAccountTransaction.txt Tests Withdraw
+
+create: compile
+	./testing.sh frontend BankAccountTransaction.txt Tests Create
+
+paybill: compile
+	./testing.sh frontend BankAccountTransaction.txt Tests paybill

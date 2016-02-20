@@ -1,2 +1,2 @@
 login standard Neil
-logout standard Neil
+logout

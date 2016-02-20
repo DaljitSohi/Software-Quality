@@ -1,1 +1,1 @@
-logout standard Neil
+logout

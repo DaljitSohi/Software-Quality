@@ -1,0 +1,85 @@
+
+ad_bill-over-2000 Testing: Started
+	ad_bill-over-2000 Result: Failure
+	1a2 > 03 John-c 00009 03000.00 CQ
+	ad_bill-over-2000 Command Line Result: Failure
+	1d0 < John-c: Invalid Transaction
+ad_bill-over-2000 Testing: Complete
+
+ad_bill-over-balance Testing: Started
+	ad_bill-over-balance Result: Failure
+	0a1,2 > 10 00000 00000.00 A > 00 00000 00000.00 A
+	ad_bill-over-balance Command Line Result: Failure
+	1,2c1 < paybill: Invalid Company Name < logouts: Invalid Transaction --- > paybill: Invalid Funds
+ad_bill-over-balance Testing: Complete
+
+ad_paybill Testing: Started
+	ad_paybill Result: Failure
+	1a2 > 03 John-b 00008 00300.00 TV
+	ad_paybill Command Line Result: Failure
+	1d0 < paybill: Invalid Account Holder Name
+ad_paybill Testing: Complete
+
+ad_SP Testing: Started
+	ad_SP Result: Failure
+	1a2 > 03 Sam-c 00019 00050.00 EC
+	ad_SP Command Line Result: Failure
+	1d0 < paybill: Invalid Account Number
+ad_SP Testing: Complete
+
+std_balance-drops-to-negative_SP Testing: Started
+	std_balance-drops-to-negative_SP Result: Failure
+	0a1,2 > 10 Sam 00016 00000.00 S > 00 Sam 00016 00000.00 S
+	std_balance-drops-to-negative_SP Command Line Result: Failure
+	1,3c1 < login: Invalid Transaction < paybill: Invalid Transaction < logout: Invalid Transaction --- > paybill: Invalid Funds
+std_balance-drops-to-negative_SP Testing: Complete
+
+std_Bill-over-balace_SP Testing: Started
+	std_Bill-over-balace_SP Result: Failure
+	0a1,3 > 10 Sam-a 00017 00000.00 S > 03 Sam-a 00017 00100.00 EC > 00 Sam-a 00017 00000.00 S
+	std_Bill-over-balace_SP Command Line Result: Failure
+	1,3c1 < login: Invalid Transaction < paybill: Invalid Transaction < logout: Invalid Transaction --- > paybill: Invalid Funds
+std_Bill-over-balace_SP Testing: Complete
+
+std_bill-over-Limit Testing: Started
+	std_bill-over-Limit Result: Failure
+	0a1,2 > 10 Daljit-a 00002 00000.00 S > 00 Daljit-a 00002 00000.00 S
+	std_bill-over-Limit Command Line Result: Failure
+	1,3c1 < login: Invalid Transaction < paybill: Invalid Transaction < logout: Invalid Transaction --- > paybill: Invalid Transaction(standard exception)
+std_bill-over-Limit Testing: Complete
+
+std_InvalidCompany Testing: Started
+	std_InvalidCompany Result: Failure
+	0a1,2 > 10 Nick-a 00012 00000.00 S > 00 Nick-a 00012 00000.00 S
+	std_InvalidCompany Command Line Result: Failure
+	1,3c1 < login: Invalid Transaction < paybill: Invalid Transaction < logout: Invalid Transaction --- > paybill: Invalid Company Name
+std_InvalidCompany Testing: Complete
+
+std_Invalid-Funds_SP Testing: Started
+	std_Invalid-Funds_SP Result: Failure
+	0a1,3 > 10 Sam-d 00020 00000.00 S > 03 Sam-d 00020 00100.05 EC > 00 sam-d 00020 00000.00 S
+	std_Invalid-Funds_SP Command Line Result: Failure
+	1,3c1 < login: Invalid Transaction < paybill: Invalid Transaction < logout: Invalid Transaction --- > paybill: Invalid Funds
+std_Invalid-Funds_SP Testing: Complete
+
+std_nonValid Testing: Started
+	std_nonValid Result: Success
+	std_nonValid Command Line Result: Failure
+	1c1 < paybill: Invalid Account Access --- > paybill: Invalid Account Number
+std_nonValid Testing: Complete
+
+std_NP Testing: Started
+	std_NP Result: Failure
+	1a2 > 03 Ryan 00021 00675.00 TV
+	std_NP Command Line Result: Failure
+	1d0 < paybill: Invalid Company Name
+std_NP Testing: Complete
+
+std_valid Testing: Started
+	std_valid Result: Failure
+	1a2 > 03 Daljit 00001 00200.00 EC
+	std_valid Command Line Result: Failure
+	1d0 < paybill: Invalid Company Name
+std_valid Testing: Complete
+
+Time to Complete:  147 ms

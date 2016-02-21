@@ -1,7 +1,7 @@
 00001 Daljit               A 06666.66 S
 00002 Daljit-a             A 03333.33 N
 00003 Daljit-b             D 10000.00 N
-00004 Neil                 A 10000.00 N
+00004 Neil                 A 20000.00 N
 00005 Sean                 A 05000.00 N
 00006 Neil-a               A 10000.00 N
 00007 John-a               D 10000.00 N
@@ -22,3 +22,5 @@
 00023 Ryan-b               D 10000.00 N
 00024 Ryan-c               D 10000.00 N
 00025 Ryan-d               A 17895.00 N
+00026 Daljit-d             A 00500.00 N
+00000 END_OF_FILE          A 00000.00 N

@@ -17,8 +17,12 @@ echo "" > log.txt
 		folder_name=$tfolder
 		touch BankAccountTransaction.txt
 		
-		./$program $tfolder"/test.txt" #> resultt.txt
+		./$program $tfolder"/test.txt" > resultt.txt
 		
+		cat BankAccountTransaction.txt
+		cat resultt.txt
+		rm BankAccountTransaction.txt
+
 		# status=""
 		# echo $tests "Testing: Started" >> log.txt
 		

@@ -85,6 +85,17 @@ private:
 			return _binarySearchName(value, middle + 1, high);
 	}
 
+	BankAccount* SearchNumber(int number)
+	{
+		for(int cnt = 0; cnt < accountslen; cnt++)
+		{
+			if(accounts[cnt].getNumber() == number)
+				return &accounts[cnt];
+		}
+		return NULL;
+	}
+
+
 	void updateTransactions(string trans)
 	{
 		bankTransactions += trans + "\n";
@@ -114,6 +125,7 @@ public:
 		
 		string all = "";
 		int len = 0;
+		bool endoffile = false;
 		while(input.get(c))
 		{
 			if(c == '\n' || c == '\r')
@@ -124,6 +136,7 @@ public:
 
 				if(found != string::npos)
 				{
+					endoffile = true;
 					break;
 				}
 				else
@@ -136,6 +149,7 @@ public:
 			}
 			line += c;
 		}
+		// cout << all << endl;
 		accountslen = len;
 		input.close();
 
@@ -150,8 +164,12 @@ public:
 			value = all.substr(last, found-last);
 			
 			last = found+1;
+			// cout << value << endl;
 			accounts[cnt] = BankAccount(value);
+			// cout << accounts[cnt] << endl;
 		}
+
+
 		Sort(accounts, accountslen);
 
 		admin = false;

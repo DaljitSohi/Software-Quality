@@ -1,2 +1,1 @@
 deposit: Invalid Account Holder Name
-deposit: Invalid Account Number

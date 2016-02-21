@@ -1,4 +1,3 @@
-login Admin
-changeplan Daljit 00005 SP
+login admin
+changeplan Daljit-d 00026
 logout
-

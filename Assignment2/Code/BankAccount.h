@@ -74,7 +74,7 @@ public:
 		last++;
 		value = line.substr(last, 8);
 		balance = Formatting::stringtofloat(value);
-		value += 8;
+		last += 8;
 
 		//get plan
 		last++;
@@ -101,9 +101,34 @@ public:
 	}
 
 
+	void Enable()
+	{
+		active = true;
+	}
+	
+	void Disable()
+	{
+		active = false;
+	}
+
 	bool isActive()
 	{
 		return active;
+	}
+
+	string ChangePlan()
+	{
+		if (student)
+		{
+			student = false;
+			return "NP";
+		}
+		else
+		{
+			student = true;
+			return "SP";
+
+		}
 	}
 
 	bool isStudent()
@@ -141,11 +166,11 @@ public:
 	friend std::ostream& operator<<(std::ostream& os, const BankAccount& t)
 	{
 	    // write obj to stream
-	    // os << "Number: " << t.number << endl;
-	    os << "Name: " << t.name << endl;
-	    // os << "Active: " << t.active << endl;
-	    // os << "Balance: " << t.balance << endl;
-	    // os << "Plan: " << t.student << endl;
+	    os << "Number: " << t.number;
+	    os << " Name: " << t.name;
+	    os << " Active: " << t.active;
+	    os << " Balance: " << t.balance;
+	    os << " Plan: " << t.student;
 	    return os;
 	}
 

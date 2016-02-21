@@ -11,6 +11,10 @@ regularrun: compile
 clean:
 	rm frontend
 
+one4test: compile
+	./oneTest.sh frontend BankAccountTransaction.txt Tests/Delete/delete_no_trans
+	cat Tests/Delete/delete_no_trans/*
+
 one3test: compile
 	./oneTest.sh frontend BankAccountTransaction.txt Tests/changePlan/ad-np-A
 	cat Tests/changePlan/ad-np-A/*
@@ -59,3 +63,9 @@ enable: compile
 
 changeplan: compile
 	./testing.sh frontend BankAccountTransaction.txt Tests changePlan
+
+delete: compile
+	./testing.sh frontend BankAccountTransaction.txt Tests Delete
+
+logout: compile
+	./testing.sh frontend BankAccountTransaction.txt Tests Logout

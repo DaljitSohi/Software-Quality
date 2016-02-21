@@ -1,1 +1,1 @@
-create: Invalid Character Amount - Shortened to 20 characters
+create: Shortened Character Amount

@@ -22,6 +22,7 @@ class BankAccount
 private:
 	bool active;
 	bool student;
+	bool deleted;
 	int number;
 	float balance;
 	char name[20];
@@ -31,7 +32,7 @@ public:
 
 	BankAccount()
 	{
-		active = student = false;
+		active = student = deleted = false;
 		number = 0;
 		balance = 0.0f;
 		strcpy(name, "                    ");
@@ -88,6 +89,8 @@ public:
 			student = false;
 		}
 		last++;
+
+		deleted = false;
 	}
 
 
@@ -98,6 +101,7 @@ public:
 		number = account.number;
 		balance = account.balance;
 		strcpy(name, account.name);
+		deleted = account.deleted;
 	}
 
 
@@ -113,7 +117,18 @@ public:
 
 	bool isActive()
 	{
-		return active;
+		return (active && !deleted);
+	}
+
+	bool isDeleted()
+	{
+		return deleted;
+	}
+
+	void deleteAccount()
+	{
+		deleted = true;
+		// cout << "deleted" << endl;
 	}
 
 	string ChangePlan()

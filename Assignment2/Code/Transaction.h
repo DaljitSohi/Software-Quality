@@ -95,6 +95,36 @@ private:
 		return NULL;
 	}
 
+	int SearchForNumber()
+	{
+		int accNum[99999];
+		memset(accNum, 0, 99999 * sizeof(int));
+		for(int cnt = 0; cnt < accountslen; cnt++)
+			if(!accounts[cnt].isDeleted())
+				accNum[accounts[cnt].getNumber()]++;
+		
+		for(int cnt = 1; cnt < 99999; cnt++)
+			if(accNum[cnt] < 1)
+				return cnt;
+		return -1;
+	}
+
+	// void DeleteAccount(int index)
+	// {
+	// 	BankAccount* temp = new BankAccount[accountslen-1];
+	// 	for(int cnt = 0; cnt < (accountslen-1); cnt++)
+	// 	{
+	// 		if(cnt >= index
+	// 			temp[cnt] = accounts[cnt+1];
+	// 		else
+	// 			temp[cnt] = accounts[cnt];
+	// 	}
+
+	// 	delete [] accounts;
+	// 	accountslen--;
+	// 	accounts = temp;
+	// }
+
 
 	void updateTransactions(string trans)
 	{
@@ -104,13 +134,22 @@ private:
 	BankAccount* GetBankAccount(string value, int cmd)
 	{
 		int index = binarySearchName(value);
-		if(index < 0 || index >= accountslen)
+		if(index < 0 || index >= accountslen || accounts[index].isDeleted())
 		{
 			cout << Formatting::commandToNumber(cmd) <<": Invalid Account Holder Name" << endl;	
 			return NULL;
 		}
 		return &accounts[index];
 	}
+
+	bool checkForBankAccount(string value)
+	{
+		int index = binarySearchName(value);
+		if(index < 0 || index >= accountslen)
+			return false;
+		return true;
+	}
+
 
 public:
 

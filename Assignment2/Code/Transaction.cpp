@@ -350,12 +350,43 @@ void Transaction::Create(string* args, int len, int cmd)
 	{
 		if(admin)
 		{
+			int argindex = 0;	
+			string name = args[argindex++];
+			//check if doesn't exits
+			if(!checkForBankAccount(name))
+			{	
+				if(name.length() > 20)
+				{
+					name = name.substr(0, 20);
+					cout << Formatting::commandToNumber(cmd) <<": Shortened Character Amount" << endl;
+				}
+				
+				//check if amount if correct
+				float amount = Formatting::stringtofloat(args[argindex]);
+				if(amount < 0.0f || amount > 99999.99f)
+				{
+					cout << Formatting::commandToNumber(cmd) <<": Invalid Input" << endl;
+					return;
+				}
 
+				int accountNumber = SearchForNumber();
+				if(accountNumber <= 0)
+				{
+					return;
+				}
 
+				updateTransactions(outFormat::makeOutput(cmd, name, accountNumber, amount, "  "));
+			}
+			else
+			{
+				cout << Formatting::commandToNumber(cmd) <<": Invalid AccessB" << endl;
+				return;
+			}
 		}
 		else
 		{
 			cout << Formatting::commandToNumber(cmd) <<": Invalid Access" << endl;	
+			return;
 		}
 	}
 	else
@@ -370,8 +401,30 @@ void Transaction::Delete(string* args, int len, int cmd)
 	{
 		if(admin)
 		{
+			BankAccount* User;
+			int argindex = 0;
+			//check for admin access
+			User = GetBankAccount(args[argindex++], cmd);
+			if(User == NULL)
+				return;
+			
+			//check for inactive
+			if(!User->isActive())
+			{
+				cout << Formatting::commandToNumber(cmd) <<": Invalid Account Access" << endl;	
+				return;
+			}
 
+			//check if the account number is ok
+			int accountNumber = Formatting::stringtoint(args[argindex++]);
+			if(User->getNumber() != accountNumber)
+			{
+				cout << Formatting::commandToNumber(cmd) <<": Invalid Account Number" << endl;
+				return;
+			}
 
+			User->deleteAccount();
+			updateTransactions(outFormat::makeOutput(cmd, User->getName(), User->getNumber(), 0, "  "));
 		}
 		else
 		{
@@ -453,7 +506,7 @@ void Transaction::Changeplan(string* args, int len, int cmd)
 				cout << Formatting::commandToNumber(cmd) <<": Invalid Account Number" << endl;
 				return;
 			}
-			
+
 			updateTransactions(outFormat::makeOutput(cmd, User->getName(), User->getNumber(), 0, User->ChangePlan()));
 		}
 		else
@@ -537,6 +590,7 @@ void Transaction::Login(string* args, int len, int cmd)
 				return;
 			}
 			logedin = true;
+			admin = false;
 			updateTransactions(outFormat::makeOutput(cmd, currentAccount->getName(), currentAccount->getNumber(), 0.0f, "S"));
 		}
 	}
@@ -582,6 +636,7 @@ void Transaction::Logout()
 		bankTransactions = "";
 		
 		logedin = false;
+		admin = false;
 	}
 	else
 	{

@@ -32,6 +32,12 @@ private:
 
 	BankAccount* currentAccount;
 
+	/**
+	*Sorts the bank account by name using radix sort
+	*account - pointer to the bank account
+	*length - the length of the array of bank accounts
+	*index - the postion of the radix sort
+	*/
 	void Sort(BankAccount*& account, int length, int index = 19)
 	{
 		if(index == -1)
@@ -67,11 +73,23 @@ private:
 		Sort(account, length, index - 1);
 	}
 
+	/**
+	*Wraper for binary search of name
+	*vaule - name you want to search for
+	*return - the binary search result
+	*/
 	int binarySearchName(string value)
 	{
 		return _binarySearchName(value, 0, accountslen - 1);
 	}
 
+	/**
+	*uses binary search to find the account index
+	*value - the search value
+	*low - binary search low index
+	*high - binary search high index
+	*return - the index of the bank account, if doesn't exits, return -1
+	*/
 	int _binarySearchName(string value, int low, int high)
 	{
 		if (high < low)
@@ -85,6 +103,12 @@ private:
 			return _binarySearchName(value, middle + 1, high);
 	}
 
+
+	/**
+	*A simple linear search of the account to find on that has a matching account number
+	*number - the account search number
+	*return - Null if no account with that number, return pointer to account if it exists
+	*/
 	BankAccount* SearchNumber(int number)
 	{
 		for(int cnt = 0; cnt < accountslen; cnt++)
@@ -95,7 +119,12 @@ private:
 		return NULL;
 	}
 
-	int SearchForNumber()
+	/**
+	* thanks the frequecy of the account number, and linearly searchs throught the 
+	*frequency array to find the next avaiable bank account number
+	*return - new unique bank account number, -1 if no more avaiable numbers
+	*/
+	int SearchForNewNumber()
 	{
 		int accNum[99999];
 		memset(accNum, 0, 99999 * sizeof(int));
@@ -109,28 +138,17 @@ private:
 		return -1;
 	}
 
-	// void DeleteAccount(int index)
-	// {
-	// 	BankAccount* temp = new BankAccount[accountslen-1];
-	// 	for(int cnt = 0; cnt < (accountslen-1); cnt++)
-	// 	{
-	// 		if(cnt >= index
-	// 			temp[cnt] = accounts[cnt+1];
-	// 		else
-	// 			temp[cnt] = accounts[cnt];
-	// 	}
-
-	// 	delete [] accounts;
-	// 	accountslen--;
-	// 	accounts = temp;
-	// }
-
-
 	void updateTransactions(string trans)
 	{
 		bankTransactions += trans + "\n";
 	}
 
+	/**
+	*wraper function to check if a name has a bank account
+	*value - the account holder name
+	*cmd - the command number of the command that invoked the function
+	*return pointer to the bank account if it exisits else return Null
+	*/
 	BankAccount* GetBankAccount(string value, int cmd)
 	{
 		int index = binarySearchName(value);

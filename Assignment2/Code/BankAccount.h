@@ -115,6 +115,9 @@ public:
 		active = false;
 	}
 
+	/**
+	*checks if the bank account is both active and not deat
+	*/
 	bool isActive()
 	{
 		return (active && !deleted);
@@ -131,6 +134,10 @@ public:
 		// cout << "deleted" << endl;
 	}
 
+	/**
+	*change the plan for student to nonstudent and vice versa
+	*return - the misc data for the type of plan
+	*/
 	string ChangePlan()
 	{
 		if (student)

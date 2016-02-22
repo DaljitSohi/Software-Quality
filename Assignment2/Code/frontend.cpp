@@ -22,24 +22,19 @@
 
 using namespace std;
 
+/**
+*create a token out of the line input and send the token to the interpeter for execution
+*line - the text for the input stream
+*action - the interpeter for the exection of the commands
+*/
 void OnCompleteLine(string line, Transaction& action)
 {
 	Token t = Token(line);
-	// cout << t;
 	Interpeter::InterpetToken(t, action);
 }
 
 int main(int argc, char** argv)
 {
-
-	// float num = 23.00f;
-	// int intpart = (int)num;
-	// float decpart = num - intpart; 
-
-	// cout << num << " " << intpart  << " "<< decpart << endl;
-	// cout << (decpart == 0.0f) << endl;
-	// cout << true << " " << false << endl;
-
 	bool isfile = false;
 	istream* input = &cin;
 	char c;

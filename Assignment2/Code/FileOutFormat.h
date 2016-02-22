@@ -22,6 +22,15 @@ using namespace std;
 class outFormat
 {
 public:
+
+	/**
+	*create a string with the proper format for the bank account transaction file
+	*command - the commmand number
+	*name - the name of the account holder
+	*number - the account holder's number
+	*money - the amount involde in the transaction
+	*misc - the extra data
+	*/
 	static string makeOutput(int command, string name, int anumber, float money, string misc)
 	{
 		string ret = "";

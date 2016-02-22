@@ -369,7 +369,7 @@ void Transaction::Create(string* args, int len, int cmd)
 					return;
 				}
 
-				int accountNumber = SearchForNumber();
+				int accountNumber = SearchForNewNumber();
 				if(accountNumber <= 0)
 				{
 					return;

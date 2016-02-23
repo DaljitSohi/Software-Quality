@@ -28,7 +28,7 @@ private:
 	bool logedin;
 	//more datatypes for current bank account
 	BankAccount* accounts = NULL;
-	int accountslen;
+	int accounts_length;
 
 	BankAccount* currentAccount;
 
@@ -50,7 +50,7 @@ private:
 
 		for (int cnt = 0; cnt < length; cnt++)
 		{ 
-			char radix = account[cnt].getName()[index];
+			char radix = account[cnt].GetName()[index];
 			countBuffer[radix]++;
 		}
 
@@ -61,7 +61,7 @@ private:
 
 		for (int cnt = length - 1; cnt >= 0; cnt--)
 		{
-			char radix = account[cnt].getName()[index];
+			char radix = account[cnt].GetName()[index];
 			sorted[countBuffer[radix] - 1] = account[cnt];
 			countBuffer[radix] -= 1;
 			
@@ -78,9 +78,9 @@ private:
 	*vaule - name you want to search for
 	*return - the binary search result
 	*/
-	int binarySearchName(string value)
+	int BinarySearchName(string value)
 	{
-		return _binarySearchName(value, 0, accountslen - 1);
+		return _BinarySearchName(value, 0, accounts_length - 1);
 	}
 
 	/**
@@ -90,17 +90,17 @@ private:
 	*high - binary search high index
 	*return - the index of the bank account, if doesn't exits, return -1
 	*/
-	int _binarySearchName(string value, int low, int high)
+	int _BinarySearchName(string value, int low, int high)
 	{
 		if (high < low)
 			return -1;
 		int middle = (high + low) / 2;
-		if (accounts[middle].getSName().compare(value) == 0)
+		if (accounts[middle].GetSName().compare(value) == 0)
 			return middle;
-		else if (accounts[middle].getSName().compare(value) >= 0)
-			return _binarySearchName(value, low, middle - 1);
+		else if (accounts[middle].GetSName().compare(value) >= 0)
+			return _BinarySearchName(value, low, middle - 1);
 		else
-			return _binarySearchName(value, middle + 1, high);
+			return _BinarySearchName(value, middle + 1, high);
 	}
 
 
@@ -111,9 +111,9 @@ private:
 	*/
 	BankAccount* SearchNumber(int number)
 	{
-		for(int cnt = 0; cnt < accountslen; cnt++)
+		for(int cnt = 0; cnt < accounts_length; cnt++)
 		{
-			if(accounts[cnt].getNumber() == number)
+			if(accounts[cnt].GetNumber() == number)
 				return &accounts[cnt];
 		}
 		return NULL;
@@ -128,9 +128,9 @@ private:
 	{
 		int accNum[99999];
 		memset(accNum, 0, 99999 * sizeof(int));
-		for(int cnt = 0; cnt < accountslen; cnt++)
-			if(!accounts[cnt].isDeleted())
-				accNum[accounts[cnt].getNumber()]++;
+		for(int cnt = 0; cnt < accounts_length; cnt++)
+			if(!accounts[cnt].IsDeleted())
+				accNum[accounts[cnt].GetNumber()]++;
 		
 		for(int cnt = 1; cnt < 99999; cnt++)
 			if(accNum[cnt] < 1)
@@ -138,7 +138,7 @@ private:
 		return -1;
 	}
 
-	void updateTransactions(string trans)
+	void UpdateTransactions(string trans)
 	{
 		bankTransactions += trans + "\n";
 	}
@@ -151,19 +151,19 @@ private:
 	*/
 	BankAccount* GetBankAccount(string value, int cmd)
 	{
-		int index = binarySearchName(value);
-		if(index < 0 || index >= accountslen || accounts[index].isDeleted())
+		int index = BinarySearchName(value);
+		if(index < 0 || index >= accounts_length || accounts[index].IsDeleted())
 		{
-			cout << Formatting::commandToNumber(cmd) <<": Invalid Account Holder Name" << endl;	
+			cout << Formatting::CommandToString(cmd) <<": Invalid Account Holder Name" << endl;	
 			return NULL;
 		}
 		return &accounts[index];
 	}
 
-	bool checkForBankAccount(string value)
+	bool CheckForBankAccount(string value)
 	{
-		int index = binarySearchName(value);
-		if(index < 0 || index >= accountslen)
+		int index = BinarySearchName(value);
+		if(index < 0 || index >= accounts_length)
 			return false;
 		return true;
 	}
@@ -207,7 +207,7 @@ public:
 			line += c;
 		}
 		// cout << all << endl;
-		accountslen = len;
+		accounts_length = len;
 		input.close();
 
 		accounts = new BankAccount[len];
@@ -227,7 +227,7 @@ public:
 		}
 
 
-		Sort(accounts, accountslen);
+		Sort(accounts, accounts_length);
 
 		admin = false;
 		logedin = false;

@@ -4,48 +4,48 @@
 void Interpeter::InterpetToken(Token& t, Transaction& record)
 {
 	try{
-		switch(t.getCommandNumber())
+		switch(t.GetCommandNumber())
 		{
 			case 1: // withdrawal
-				record.Withdrawal(t.getArgument(), t.getArgumentLength(), t.getCommandNumber());
+				record.Withdrawal(t.GetArgument(), t.GetArgumentLength(), t.GetCommandNumber());
 				break;
 			case 2: // transfer
-				record.Transfer(t.getArgument(), t.getArgumentLength(), t.getCommandNumber());
+				record.Transfer(t.GetArgument(), t.GetArgumentLength(), t.GetCommandNumber());
 				break;
 			case 3: // paybill
-				record.Paybill(t.getArgument(), t.getArgumentLength(), t.getCommandNumber());
+				record.Paybill(t.GetArgument(), t.GetArgumentLength(), t.GetCommandNumber());
 				break;
 			case 4: // deposit
-				record.Deposit(t.getArgument(), t.getArgumentLength(), t.getCommandNumber());
+				record.Deposit(t.GetArgument(), t.GetArgumentLength(), t.GetCommandNumber());
 				break;
 			case 5: // create
-				record.Create(t.getArgument(), t.getArgumentLength(), t.getCommandNumber());
+				record.Create(t.GetArgument(), t.GetArgumentLength(), t.GetCommandNumber());
 				break;
 			case 6: // delete
-				record.Delete(t.getArgument(), t.getArgumentLength(), t.getCommandNumber());
+				record.Delete(t.GetArgument(), t.GetArgumentLength(), t.GetCommandNumber());
 				break;
 			case 7: // disable
-				record.Disable(t.getArgument(), t.getArgumentLength(), t.getCommandNumber());
+				record.Disable(t.GetArgument(), t.GetArgumentLength(), t.GetCommandNumber());
 				break;
 			case 8: // changeplan
-				record.Changeplan(t.getArgument(), t.getArgumentLength(), t.getCommandNumber());
+				record.Changeplan(t.GetArgument(), t.GetArgumentLength(), t.GetCommandNumber());
 				break;
 			case 9: // enable 
-				record.Enable(t.getArgument(), t.getArgumentLength(), t.getCommandNumber());
+				record.Enable(t.GetArgument(), t.GetArgumentLength(), t.GetCommandNumber());
 				break;
 			case 10: // login
-				record.Login(t.getArgument(), t.getArgumentLength(), t.getCommandNumber());
+				record.Login(t.GetArgument(), t.GetArgumentLength(), t.GetCommandNumber());
 				break;
 			case 0: //logout
 				record.Logout();
 				break;
 			default:
-				cout << t.getCommandName() << ": Invalid Transaction" << endl;
+				cout << t.GetCommandName() << ": Invalid Transaction" << endl;
 				break;
 		}
 	}
 	catch (...)
 	{
-		cout << t.getCommandName() << ": Invalid Transaction" << endl;
+		cout << t.GetCommandName() << ": Invalid Transaction" << endl;
 	}
 }

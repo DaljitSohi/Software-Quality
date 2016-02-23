@@ -19,7 +19,7 @@ using namespace std;
 #define BATF_MISC_LEN 2
 
 
-class outFormat
+class OutFormat
 {
 public:
 
@@ -31,15 +31,15 @@ public:
 	*money - the amount involde in the transaction
 	*misc - the extra data
 	*/
-	static string makeOutput(int command, string name, int anumber, float money, string misc)
+	static string MakeOutput(int command, string name, int anumber, float money, string misc)
 	{
 		string ret = "";
 		
 		//add command
 		if(command >= 10)
-			ret += Formatting::inttostring(command) + " ";
+			ret += Formatting::IntToString(command) + " ";
 		else
-			ret += "0"+ Formatting::inttostring(command) + " ";
+			ret += "0"+ Formatting::IntToString(command) + " ";
 
 		//add name
 		int len = BATF_NAME_LEN - name.length();
@@ -58,7 +58,7 @@ public:
 		ret += " ";
 
 		//add accountnumbers
-		string number = Formatting::inttostring(anumber);
+		string number = Formatting::IntToString(anumber);
 
 		if(number.length() < BATF_ACC_NUM_LEN)
 		{
@@ -73,7 +73,7 @@ public:
 		ret += " ";
 
 		//add dollar amount
-		string dollar = Formatting::floattostring(money);
+		string dollar = Formatting::FloatToString(money);
 
 		if(dollar.length() < BATF_MONEY_LEN)
 		{

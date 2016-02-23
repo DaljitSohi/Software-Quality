@@ -21,21 +21,21 @@ class Token
 {
 private:
 	string command;
-	int cmdint;
+	int commandNumber;
 	string* args = NULL;
-	int lenargs;
+	int args_length;
 
 public:
 
 	Token(string line)
 	{
-		lenargs = 0;
-		int arglen = Formatting::characterFrequency(' ', line);
+		args_length = 0;
+		int arglen = Formatting::CharacterFrequency(' ', line);
 		
 		if(arglen == 0)
 		{
 			command = line;
-			cmdint = Formatting::commandToNumber(command);
+			commandNumber = Formatting::CommandToNumber(command);
 		}
 		else
 		{
@@ -47,11 +47,11 @@ public:
 			if(found != string::npos)
 			{
 				command = line.substr(0, found);
-				cmdint = Formatting::commandToNumber(command);
+				commandNumber = Formatting::CommandToNumber(command);
 			}
 			last = found;
 			args = new string[arglen];
-			lenargs = arglen;
+			args_length = arglen;
 			int cnt = 0;
 			while((found = line.find(wanted, last+1)) != string::npos)
 			{
@@ -69,37 +69,25 @@ public:
 	}
 
 
-	int getCommandNumber()
+	int GetCommandNumber()
 	{
-		return cmdint;
+		return commandNumber;
 	}
 
-	string getCommandName()
+	string GetCommandName()
 	{
 		return command;
 	}
 
-	int getArgumentLength()
+	int GetArgumentLength()
 	{
-		return lenargs;
+		return args_length;
 	}
 
-	string* getArgument()
+	string* GetArgument()
 	{
 		return args;
 	}
-
-	friend std::ostream& operator<<(std::ostream& os, const Token& t)
-	{
-	    // write obj to stream
-	    os << "Command: " << t.command << endl;
-		for(int cnt = 0; cnt < t.lenargs; cnt++)
-		{
-			os << "Arg[" << cnt << "]: " << t.args[cnt] << endl;
-		}
-	    return os;
-	}
-
 };
 
 

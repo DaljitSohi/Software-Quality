@@ -27,14 +27,14 @@ using namespace std;
 class Formatting
 {
 public:
-	static string inttostring(int num)
+	static string IntToString(int num)
 	{
 		stringstream stream;
 		stream << num;
 		return stream.str();
 	}
 
-	static string floattostring(float num)
+	static string FloatToString(float num)
 	{
 		stringstream stream;
 		stream << fixed << setprecision(2) << num;
@@ -42,7 +42,7 @@ public:
 	}
 
 
-	static int stringtoint(string num)
+	static int StringToInt(string num)
 	{
 		istringstream buffer(num);
 		int value;
@@ -50,7 +50,7 @@ public:
 		return value;		
 	}
 
-	static float stringtofloat(string num)
+	static float StringToFloat(string num)
 	{
 		istringstream buffer(num);
 		float value;
@@ -59,7 +59,7 @@ public:
 	}
 
 
-	static int commandToNumber(string command)
+	static int CommandToNumber(string command)
 	{
 		if(command.compare("withdrawal") == 0)
 		{
@@ -108,7 +108,7 @@ public:
 		return -1;
 	}
 
-	static string commandToNumber(int command)
+	static string CommandToString(int command)
 	{
 		switch(command)
 		{
@@ -151,7 +151,7 @@ public:
 		}
 	}
 
-	static int characterFrequency(char c, string test)
+	static int CharacterFrequency(char c, string test)
 	{
 		int ret = 0;
 		for(int cnt = 0; cnt < test.length(); cnt++)

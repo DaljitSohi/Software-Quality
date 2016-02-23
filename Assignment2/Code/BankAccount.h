@@ -40,14 +40,14 @@ public:
 
 	BankAccount(string line)
 	{
-		int arglen = Formatting::characterFrequency(' ', line);
+		int arglen = Formatting::CharacterFrequency(' ', line);
 		string wanted = " ";
 		size_t last = 0;
 		string value;
 		
 		//get number
 		value = line.substr(last, 5);
-		number = Formatting::stringtoint(value);
+		number = Formatting::StringToInt(value);
 		last += 5;
 
 		//get name
@@ -74,7 +74,7 @@ public:
 		//get balance
 		last++;
 		value = line.substr(last, 8);
-		balance = Formatting::stringtofloat(value);
+		balance = Formatting::StringToFloat(value);
 		last += 8;
 
 		//get plan
@@ -118,17 +118,17 @@ public:
 	/**
 	*checks if the bank account is both active and not deat
 	*/
-	bool isActive()
+	bool IsActive()
 	{
 		return (active && !deleted);
 	}
 
-	bool isDeleted()
+	bool IsDeleted()
 	{
 		return deleted;
 	}
 
-	void deleteAccount()
+	void DeleteAccount()
 	{
 		deleted = true;
 		// cout << "deleted" << endl;
@@ -153,49 +153,36 @@ public:
 		}
 	}
 
-	bool isStudent()
+	bool IsStudent()
 	{
 		return student;
 	}
 
-	int getNumber()
+	int GetNumber()
 	{
 		return number;
 	}
 
-	float getBalance()
+	float GetBalance()
 	{
 		return balance;
 	}
 
-	void setBalance(float amount)
+	void SetBalance(float amount)
 	{
 		balance = amount;
 	}
 	
 
-	char* getName()
+	char* GetName()
 	{
 		return name;
 	}
 
-	string getSName()
+	string GetSName()
 	{
 		return string(name);
 	}
-
-
-	friend std::ostream& operator<<(std::ostream& os, const BankAccount& t)
-	{
-	    // write obj to stream
-	    os << "Number: " << t.number;
-	    os << " Name: " << t.name;
-	    os << " Active: " << t.active;
-	    os << " Balance: " << t.balance;
-	    os << " Plan: " << t.student;
-	    return os;
-	}
-
 };
 
 #endif

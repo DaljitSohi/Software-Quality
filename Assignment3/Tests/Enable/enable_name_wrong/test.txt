@@ -1,0 +1,3 @@
+login admin
+enable Nickk 00008
+logout

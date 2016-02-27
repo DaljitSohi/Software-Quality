@@ -1,0 +1,3 @@
+login standard Sam-a 
+paybill 00017 "EC" 110.00
+logout

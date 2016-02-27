@@ -1,0 +1,3 @@
+login admin
+changeplan Jimmy-J 00001
+logout

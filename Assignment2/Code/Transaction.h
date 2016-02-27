@@ -38,39 +38,18 @@ private:
 	*length - the length of the array of bank accounts
 	*index - the postion of the radix sort
 	*/
-	void Sort(BankAccount*& account, int length, int index = 19)
+	void Sort(BankAccount*& account, int length)
 	{
-		if(index == -1)
-			return;
-
-		BankAccount* sorted = new BankAccount[length];
-		
-		int countBuffer[256];
-		memset(countBuffer, 0, 256 * sizeof(int));
-
-		for (int cnt = 0; cnt < length; cnt++)
-		{ 
-			char radix = account[cnt].GetName()[index];
-			countBuffer[radix]++;
-		}
-
-		for (int cnt = 1; cnt < 256; cnt++)
-		{
-			countBuffer[cnt] += countBuffer[cnt - 1];
-		}
-
-		for (int cnt = length - 1; cnt >= 0; cnt--)
-		{
-			char radix = account[cnt].GetName()[index];
-			sorted[countBuffer[radix] - 1] = account[cnt];
-			countBuffer[radix] -= 1;
-			
-		}
-
-		delete [] account;
-		account = sorted;
-
-		Sort(account, length, index - 1);
+		for(int outter = 0; outter < length; outter++)
+			for(int inner = (outter + 1); inner < length; inner++)
+			{
+				if(accounts[outter].GetSName().compare(accounts[inner].GetSName()) >= 0)
+				{
+					BankAccount temp = accounts[outter];
+					accounts[outter] = accounts[inner];
+					accounts[inner] = temp;
+				}
+			}
 	}
 
 	/**
@@ -166,6 +145,23 @@ private:
 		if(index < 0 || index >= accounts_length)
 			return false;
 		return true;
+	}
+
+	float GetTransactionCharge(BankAccount *& User)
+	{
+		float dec = 0.0f;
+		if (admin)
+		{	
+			return 0.0f;
+		}
+		else
+		{
+			if(User->IsStudent())
+				dec = 0.05f;
+			else
+				dec = 0.10f;
+		}
+
 	}
 
 

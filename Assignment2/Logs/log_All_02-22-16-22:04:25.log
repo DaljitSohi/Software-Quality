@@ -1,0 +1,364 @@
+
+ad-np-A Testing: Started
+	ad-np-A Result: Success
+	ad-np-A Command Line Result: Success
+ad-np-A Testing: Complete
+
+ad-np-A--Acc#_problem Testing: Started
+	ad-np-A--Acc#_problem Result: Success
+	ad-np-A--Acc#_problem Command Line Result: Success
+ad-np-A--Acc#_problem Testing: Complete
+
+ad-sp-A Testing: Started
+	ad-sp-A Result: Success
+	ad-sp-A Command Line Result: Success
+ad-sp-A Testing: Complete
+
+as-sp-A--Acc_name_problem Testing: Started
+	as-sp-A--Acc_name_problem Result: Success
+	as-sp-A--Acc_name_problem Command Line Result: Success
+as-sp-A--Acc_name_problem Testing: Complete
+
+std-np-A Testing: Started
+	std-np-A Result: Success
+	std-np-A Command Line Result: Success
+std-np-A Testing: Complete
+
+std-sp-D Testing: Started
+	std-sp-D Result: Success
+	std-sp-D Command Line Result: Success
+std-sp-D Testing: Complete
+
+create_admin_only Testing: Started
+	create_admin_only Result: Success
+	create_admin_only Command Line Result: Success
+create_admin_only Testing: Complete
+
+create_max_char_not_work Testing: Started
+	create_max_char_not_work Result: Success
+	create_max_char_not_work Command Line Result: Success
+create_max_char_not_work Testing: Complete
+
+create_max_char_working Testing: Started
+	create_max_char_working Result: Success
+	create_max_char_working Command Line Result: Success
+create_max_char_working Testing: Complete
+
+create_max_money_no_work Testing: Started
+	create_max_money_no_work Result: Success
+	create_max_money_no_work Command Line Result: Success
+create_max_money_no_work Testing: Complete
+
+create_max_money_working Testing: Started
+	create_max_money_working Result: Success
+	create_max_money_working Command Line Result: Success
+create_max_money_working Testing: Complete
+
+create_no_trans Testing: Started
+	create_no_trans Result: Success
+	create_no_trans Command Line Result: Success
+create_no_trans Testing: Complete
+
+create_standard_try Testing: Started
+	create_standard_try Result: Success
+	create_standard_try Command Line Result: Success
+create_standard_try Testing: Complete
+
+delete_admin_only Testing: Started
+	delete_admin_only Result: Success
+	delete_admin_only Command Line Result: Success
+delete_admin_only Testing: Complete
+
+delete_name_wrong Testing: Started
+	delete_name_wrong Result: Success
+	delete_name_wrong Command Line Result: Success
+delete_name_wrong Testing: Complete
+
+delete_no_trans Testing: Started
+	delete_no_trans Result: Success
+	delete_no_trans Command Line Result: Success
+delete_no_trans Testing: Complete
+
+delete_number_wrong Testing: Started
+	delete_number_wrong Result: Success
+	delete_number_wrong Command Line Result: Success
+delete_number_wrong Testing: Complete
+
+delete_standard_try Testing: Started
+	delete_standard_try Result: Success
+	delete_standard_try Command Line Result: Success
+delete_standard_try Testing: Complete
+
+ad_NotValid Testing: Started
+	ad_NotValid Result: Success
+	ad_NotValid Command Line Result: Success
+ad_NotValid Testing: Complete
+
+ad_UnacceptableAmound Testing: Started
+	ad_UnacceptableAmound Result: Success
+	ad_UnacceptableAmound Command Line Result: Success
+ad_UnacceptableAmound Testing: Complete
+
+ad_Valid Testing: Started
+	ad_Valid Result: Success
+	ad_Valid Command Line Result: Success
+ad_Valid Testing: Complete
+
+std_0-Amount Testing: Started
+	std_0-Amount Result: Failure
+	0a1,2 > 10 Nick-b 00013 00000.00 S > 00 Nick-b 00013 00000.00 S
+	std_0-Amount Command Line Result: Failure
+	1,3c1 < login: Invalid Transaction < deposit: Invalid Transaction < logout: Invalid Transaction --- > deposit: Invalid Input
+std_0-Amount Testing: Complete
+
+std_Suspended Testing: Started
+	std_Suspended Result: Failure
+	0a1,2 > 10 Daljit-b 00003 00000.00 S > 00 Daljit-b 00003 00000.00 S
+	std_Suspended Command Line Result: Failure
+	1,3c1 < login: Invalid Transaction < deposit: Invalid Transaction < logout: Invalid Transaction --- > deposit: Invalid Account Access
+std_Suspended Testing: Complete
+
+std_UsingDepositAmount Testing: Started
+	std_UsingDepositAmount Result: Failure
+	1,3c1,3 < 10 Sam 00016 00000.00 S < 04 Sam 00016 00300.00 < 00 Sam 00016 00000.00 S --- > 10 Sam 00001 00000.00 S > 04 00001 00300.00 S > 00 Sam 00001 00000.00 S
+	std_UsingDepositAmount Command Line Result: Failure
+	1c1 < paybill: Invalid Company Name --- > deposit: Invalid Transaction
+std_UsingDepositAmount Testing: Complete
+
+std_Valid Testing: Started
+	std_Valid Result: Failure
+	0a1,3 > 10 Daljit 00001 00000.00 S > 04 00001 00500.00 S > 00 Daljit 00001 00000.00 S
+	std_Valid Command Line Result: Failure
+	1,3d0 < login: Invalid Transaction < deposit: Invalid Transaction < logout: Invalid Transaction
+std_Valid Testing: Complete
+
+disable_admin_only Testing: Started
+	disable_admin_only Result: Success
+	disable_admin_only Command Line Result: Success
+disable_admin_only Testing: Complete
+
+disable_name_wrong Testing: Started
+	disable_name_wrong Result: Success
+	disable_name_wrong Command Line Result: Success
+disable_name_wrong Testing: Complete
+
+disable_no_trans Testing: Started
+	disable_no_trans Result: Success
+	disable_no_trans Command Line Result: Success
+disable_no_trans Testing: Complete
+
+disable_number_wrong Testing: Started
+	disable_number_wrong Result: Success
+	disable_number_wrong Command Line Result: Success
+disable_number_wrong Testing: Complete
+
+disable_standard_try Testing: Started
+	disable_standard_try Result: Success
+	disable_standard_try Command Line Result: Success
+disable_standard_try Testing: Complete
+
+enable_admin_only Testing: Started
+	enable_admin_only Result: Success
+	enable_admin_only Command Line Result: Success
+enable_admin_only Testing: Complete
+
+enable_name_wrong Testing: Started
+	enable_name_wrong Result: Success
+	enable_name_wrong Command Line Result: Success
+enable_name_wrong Testing: Complete
+
+enable_num_wrong Testing: Started
+	enable_num_wrong Result: Success
+	enable_num_wrong Command Line Result: Success
+enable_num_wrong Testing: Complete
+
+enable_standard_try Testing: Started
+	enable_standard_try Result: Success
+	enable_standard_try Command Line Result: Success
+enable_standard_try Testing: Complete
+
+login_admin_all Testing: Started
+	login_admin_all Result: Failure
+	1,2c1,3 < 10 00000 00000.00 A < 00 00000 00000.00 A --- > 10 00000 00000000 A > 05 Nick 00010 04000.00 > 00 00000 00000000 A
+	login_admin_all Command Line Result: Failure
+	1d0 < create: Invalid AccessB
+login_admin_all Testing: Complete
+
+login_no_sub_login Testing: Started
+	login_no_sub_login Result: Success
+	login_no_sub_login Command Line Result: Success
+login_no_sub_login Testing: Complete
+
+login_no_trans_acpt Testing: Started
+	login_no_trans_acpt Result: Success
+	login_no_trans_acpt Command Line Result: Success
+login_no_trans_acpt Testing: Complete
+
+login_standard_only Testing: Started
+	login_standard_only Result: Failure
+	0a1,2 > 10 Matt 00009 00000000 S > 00 Matt 00009 00000000 S
+	login_standard_only Command Line Result: Failure
+	1,3c1 < login: Invalid Account Holder Name < create: Invalid Transaction < logout: Invalid Transaction --- > login: Invalid Access \ No newline at end of file
+login_standard_only Testing: Complete
+
+admin_logout Testing: Started
+	admin_logout Result: Success
+	admin_logout Command Line Result: Success
+admin_logout Testing: Complete
+
+logout_initial_statement Testing: Started
+	logout_initial_statement Result: Success
+	logout_initial_statement Command Line Result: Success
+logout_initial_statement Testing: Complete
+
+standard_login_deposit_logout Testing: Started
+	standard_login_deposit_logout Result: Success
+	standard_login_deposit_logout Command Line Result: Success
+standard_login_deposit_logout Testing: Complete
+
+standard_login_logout Testing: Started
+	standard_login_logout Result: Success
+	standard_login_logout Command Line Result: Success
+standard_login_logout Testing: Complete
+
+transaction_after_logout Testing: Started
+	transaction_after_logout Result: Success
+	transaction_after_logout Command Line Result: Success
+transaction_after_logout Testing: Complete
+
+transaction_after_logout_2 Testing: Started
+	transaction_after_logout_2 Result: Success
+	transaction_after_logout_2 Command Line Result: Success
+transaction_after_logout_2 Testing: Complete
+
+ad_bill-over-2000 Testing: Started
+	ad_bill-over-2000 Result: Failure
+	1a2 > 03 John-c 00009 03000.00 CQ
+	ad_bill-over-2000 Command Line Result: Failure
+	1d0 < John-c: Invalid Transaction
+ad_bill-over-2000 Testing: Complete
+
+ad_bill-over-balance Testing: Started
+	ad_bill-over-balance Result: Failure
+	0a1,2 > 10 00000 00000.00 A > 00 00000 00000.00 A
+	ad_bill-over-balance Command Line Result: Failure
+	1,2c1 < paybill: Invalid Company Name < logouts: Invalid Transaction --- > paybill: Invalid Funds
+ad_bill-over-balance Testing: Complete
+
+ad_paybill Testing: Started
+	ad_paybill Result: Failure
+	1a2 > 03 John-b 00008 00300.00 TV
+	ad_paybill Command Line Result: Failure
+	1d0 < paybill: Invalid Account Holder Name
+ad_paybill Testing: Complete
+
+ad_SP Testing: Started
+	ad_SP Result: Failure
+	1a2 > 03 Sam-c 00019 00050.00 EC
+	ad_SP Command Line Result: Failure
+	1d0 < paybill: Invalid Account Number
+ad_SP Testing: Complete
+
+std_balance-drops-to-negative_SP Testing: Started
+	std_balance-drops-to-negative_SP Result: Failure
+	0a1,2 > 10 Sam 00016 00000.00 S > 00 Sam 00016 00000.00 S
+	std_balance-drops-to-negative_SP Command Line Result: Failure
+	1,3c1 < login: Invalid Transaction < paybill: Invalid Transaction < logout: Invalid Transaction --- > paybill: Invalid Funds
+std_balance-drops-to-negative_SP Testing: Complete
+
+std_Bill-over-balace_SP Testing: Started
+	std_Bill-over-balace_SP Result: Failure
+	0a1,3 > 10 Sam-a 00017 00000.00 S > 03 Sam-a 00017 00100.00 EC > 00 Sam-a 00017 00000.00 S
+	std_Bill-over-balace_SP Command Line Result: Failure
+	1,3c1 < login: Invalid Transaction < paybill: Invalid Transaction < logout: Invalid Transaction --- > paybill: Invalid Funds
+std_Bill-over-balace_SP Testing: Complete
+
+std_bill-over-Limit Testing: Started
+	std_bill-over-Limit Result: Failure
+	0a1,2 > 10 Daljit-a 00002 00000.00 S > 00 Daljit-a 00002 00000.00 S
+	std_bill-over-Limit Command Line Result: Failure
+	1,3c1 < login: Invalid Transaction < paybill: Invalid Transaction < logout: Invalid Transaction --- > paybill: Invalid Transaction(standard exception)
+std_bill-over-Limit Testing: Complete
+
+std_InvalidCompany Testing: Started
+	std_InvalidCompany Result: Failure
+	0a1,2 > 10 Nick-a 00012 00000.00 S > 00 Nick-a 00012 00000.00 S
+	std_InvalidCompany Command Line Result: Failure
+	1,3c1 < login: Invalid Transaction < paybill: Invalid Transaction < logout: Invalid Transaction --- > paybill: Invalid Company Name
+std_InvalidCompany Testing: Complete
+
+std_Invalid-Funds_SP Testing: Started
+	std_Invalid-Funds_SP Result: Failure
+	0a1,3 > 10 Sam-d 00020 00000.00 S > 03 Sam-d 00020 00100.05 EC > 00 sam-d 00020 00000.00 S
+	std_Invalid-Funds_SP Command Line Result: Failure
+	1,3c1 < login: Invalid Transaction < paybill: Invalid Transaction < logout: Invalid Transaction --- > paybill: Invalid Funds
+std_Invalid-Funds_SP Testing: Complete
+
+std_nonValid Testing: Started
+	std_nonValid Result: Success
+	std_nonValid Command Line Result: Failure
+	1c1 < paybill: Invalid Account Access --- > paybill: Invalid Account Number
+std_nonValid Testing: Complete
+
+std_NP Testing: Started
+	std_NP Result: Failure
+	1a2 > 03 Ryan 00021 00675.00 TV
+	std_NP Command Line Result: Failure
+	1d0 < paybill: Invalid Company Name
+std_NP Testing: Complete
+
+std_valid Testing: Started
+	std_valid Result: Failure
+	1a2 > 03 Daljit 00001 00200.00 EC
+	std_valid Command Line Result: Failure
+	1d0 < paybill: Invalid Company Name
+std_valid Testing: Complete
+
+admin_transfer Testing: Started
+	admin_transfer Result: Success
+	admin_transfer Command Line Result: Success
+admin_transfer Testing: Complete
+
+negative_transfer Testing: Started
+	negative_transfer Result: Success
+	negative_transfer Command Line Result: Success
+negative_transfer Testing: Complete
+
+standard_greaterthan_transfer Testing: Started
+	standard_greaterthan_transfer Result: Success
+	standard_greaterthan_transfer Command Line Result: Success
+standard_greaterthan_transfer Testing: Complete
+
+standard_transfer_fivehund Testing: Started
+	standard_transfer_fivehund Result: Success
+	standard_transfer_fivehund Command Line Result: Success
+standard_transfer_fivehund Testing: Complete
+
+zero_transfer Testing: Started
+	zero_transfer Result: Failure
+	1,4c1,6 < 10 Neil 00004 00000.00 S < 00 Neil 00004 00000.00 S < 10 Sean 00005 00000.00 S < 00 Sean 00005 00000.00 S --- > 10 Neil 00005 00000.00 S > 02 Neil 00005 00000.00 S > 02 Sean 00006 00000.00 S > 00 Neil 00005 00000.00 S > 10 Sean 00006 00000.00 S > 00 Sean 00006 00000.00 S
+	zero_transfer Command Line Result: Failure
+	1,2c1 < transfer: Invalid Account Number < transferto: Invalid Transaction --- > logout: Invalid Input \ No newline at end of file
+zero_transfer Testing: Complete
+
+admin_withdrawal Testing: Started
+	admin_withdrawal Result: Success
+	admin_withdrawal Command Line Result: Success
+admin_withdrawal Testing: Complete
+
+greater_than_max_withdrawal Testing: Started
+	greater_than_max_withdrawal Result: Success
+	greater_than_max_withdrawal Command Line Result: Success
+greater_than_max_withdrawal Testing: Complete
+
+nonmultiple_withdrawal Testing: Started
+	nonmultiple_withdrawal Result: Success
+	nonmultiple_withdrawal Command Line Result: Success
+nonmultiple_withdrawal Testing: Complete
+
+standard_max_withdrawal Testing: Started
+	standard_max_withdrawal Result: Success
+	standard_max_withdrawal Command Line Result: Success
+standard_max_withdrawal Testing: Complete
+
+Time to Complete:  593 ms

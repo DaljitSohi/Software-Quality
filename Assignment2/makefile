@@ -2,42 +2,17 @@
 compile:
 	g++  Code/*.cpp Code/*.h -o frontend
 
-run: onetest
-
-regularrun: compile
+run: compile
 	clear
 	./frontend Tests/Create/create_admin_only/test.txt
 	
 clean:
 	rm frontend
 
-one4test: compile
-	./oneTest.sh frontend BankAccountTransaction.txt Tests/Delete/delete_no_trans
-	cat Tests/Delete/delete_no_trans/*
-
-one3test: compile
-	./oneTest.sh frontend BankAccountTransaction.txt Tests/changePlan/ad-np-A
-	cat Tests/changePlan/ad-np-A/*
-
-one2test: compile
-	./oneTest.sh frontend BankAccountTransaction.txt Tests/Transfer/standard_transfer_fivehund
-	cat Tests/Transfer/standard_transfer_fivehund/*
-
-
-onetest: compile
-	./oneTest.sh frontend BankAccountTransaction.txt Tests/Create/create_admin_only
-	cat Tests/Create/create_admin_only/*
-
-localtext: compile
-	./frontend test.tst
-
 testing: compile
 	./testing.sh frontend BankAccountTransaction.txt Tests
 
 login: compile
-	./testing.sh frontend BankAccountTransaction.txt Tests Login
-
-login2:
 	./testing.sh frontend BankAccountTransaction.txt Tests Login
 
 withdrawal: compile

@@ -1,0 +1,2 @@
+paybill: Invalid Company Name
+logouts: Invalid Transaction

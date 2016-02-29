@@ -1,1 +1,1 @@
-deposit: Invalid Transaction
+paybill: Invalid Funds

@@ -1,0 +1,65 @@
+ad-np-A	WhatTestis	Success			
+ad-np-A--Acc#_problem	WhatTestis	Success			
+ad-sp-A	WhatTestis	Success			
+as-sp-A--Acc_name_problem	WhatTestis	Success			
+std-np-A	WhatTestis	Success			
+std-sp-D	WhatTestis	Success			
+create_admin_only	WhatTestis	Success			
+create_max_char_not_work	WhatTestis	Success			
+create_max_char_working	WhatTestis	Success			
+create_max_money_no_work	WhatTestis	Success			
+create_max_money_working	WhatTestis	Success			
+create_no_trans	WhatTestis	Success			
+create_standard_try	WhatTestis	Success			
+delete_admin_only	WhatTestis	Success			
+delete_name_wrong	WhatTestis	Success			
+delete_no_trans	WhatTestis	Success			
+delete_number_wrong	WhatTestis	Success			
+delete_standard_try	WhatTestis	Success			
+ad_NotValid	WhatTestis	Success			
+ad_UnacceptableAmound	WhatTestis	Success			
+ad_Valid	WhatTestis	Success			
+std_0-Amount	WhatTestis	Success			
+std_Suspended	WhatTestis	Success			
+std_UsingDepositAmount	WhatTestis	Success			
+std_Valid	WhatTestis	Success			
+disable_admin_only	WhatTestis	Success			
+disable_name_wrong	WhatTestis	Success			
+disable_no_trans	WhatTestis	Success			
+disable_number_wrong	WhatTestis	Success			
+disable_standard_try	WhatTestis	Success			
+enable_admin_only	WhatTestis	Success			
+enable_name_wrong	WhatTestis	Success			
+enable_num_wrong	WhatTestis	Success			
+enable_standard_try	WhatTestis	Success			
+login_admin_all	WhatTestis	Success			
+login_no_sub_login	WhatTestis	Success			
+login_no_trans_acpt	WhatTestis	Success			
+login_standard_only	WhatTestis	Success			
+admin_logout	WhatTestis	Success			
+logout_initial_statement	WhatTestis	Success			
+standard_login_deposit_logout	WhatTestis	Success			
+standard_login_logout	WhatTestis	Success			
+transaction_after_logout	WhatTestis	Success			
+transaction_after_logout_2	WhatTestis	Success			
+ad_bill-over-2000	WhatTestis	Failure	how it fail	what error	how fixed it
+ad_bill-over-balance	WhatTestis	Failure	how it fail	what error	how fixed it
+ad_paybill	WhatTestis	Failure	how it fail	what error	how fixed it
+ad_SP	WhatTestis	Failure	how it fail	what error	how fixed it
+std_balance-drops-to-negative_SP	WhatTestis	Failure	how it fail	what error	how fixed it
+std_Bill-over-balace_SP	WhatTestis	Failure	how it fail	what error	how fixed it
+std_bill-over-Limit	WhatTestis	Failure	how it fail	what error	how fixed it
+std_InvalidCompany	WhatTestis	Failure	how it fail	what error	how fixed it
+std_Invalid-Funds_SP	WhatTestis	Failure	how it fail	what error	how fixed it
+std_nonValid	WhatTestis	Failure	how it fail	what error	how fixed it
+std_NP	WhatTestis	Failure	how it fail	what error	how fixed it
+std_valid	WhatTestis	Failure	how it fail	what error	how fixed it
+admin_transfer	WhatTestis	Success			
+negative_transfer	WhatTestis	Success			
+standard_greaterthan_transfer	WhatTestis	Success			
+standard_transfer_fivehund	WhatTestis	Success			
+zero_transfer	WhatTestis	Success			
+admin_withdrawal	WhatTestis	Success			
+greater_than_max_withdrawal	WhatTestis	Success			
+nonmultiple_withdrawal	WhatTestis	Success			
+standard_max_withdrawal	WhatTestis	Success			

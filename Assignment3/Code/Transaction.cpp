@@ -139,7 +139,7 @@ void Transaction::Transfer(string* args, int len, int cmd)
 		float amount = Formatting::StringToFloat(args[argindex]);
 		if(admin)
 		{
-			if(amount < 0.0f || amount > 99999.99f)
+			if(amount <= 0.0f || amount > 99999.99f)
 			{
 				cout << Formatting::CommandToString(cmd) <<": Invalid Input" << endl;
 				return;
@@ -147,7 +147,7 @@ void Transaction::Transfer(string* args, int len, int cmd)
 		}
 		else
 		{
-			if(amount < 0.0f || amount > 1000.00f)
+			if(amount <= 0.0f || amount > 1000.00f)
 			{
 				cout << Formatting::CommandToString(cmd) <<": Invalid Input" << endl;
 				return;
@@ -298,7 +298,7 @@ void Transaction::Deposit(string* args, int len, int cmd)
 
 		//check if amount if correct
 		float amount = Formatting::StringToFloat(args[argindex]);
-		if(amount < 0.0f || amount > 99999.99f)
+		if(amount <= 0.0f || amount > 99999.99f)
 		{
 			cout << Formatting::CommandToString(cmd) <<": Invalid Input" << endl;
 			return;
@@ -352,7 +352,7 @@ void Transaction::Create(string* args, int len, int cmd)
 			}
 			else
 			{
-				cout << Formatting::CommandToString(cmd) <<": Invalid AccessB" << endl;
+				cout << Formatting::CommandToString(cmd) <<": Invalid Access" << endl;
 				return;
 			}
 		}

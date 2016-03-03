@@ -42,18 +42,18 @@ standard_login_deposit_logout	WhatTestis	Success
 standard_login_logout	WhatTestis	Success			
 transaction_after_logout	WhatTestis	Success			
 transaction_after_logout_2	WhatTestis	Success			
-ad_bill-over-2000	WhatTestis	Failure	how it fail	what error	how fixed it
-ad_bill-over-balance	WhatTestis	Failure	how it fail	what error	how fixed it
-ad_paybill	WhatTestis	Failure	how it fail	what error	how fixed it
-ad_SP	WhatTestis	Failure	how it fail	what error	how fixed it
-std_balance-drops-to-negative_SP	WhatTestis	Failure	how it fail	what error	how fixed it
-std_Bill-over-balace_SP	WhatTestis	Failure	how it fail	what error	how fixed it
-std_bill-over-Limit	WhatTestis	Failure	how it fail	what error	how fixed it
-std_InvalidCompany	WhatTestis	Failure	how it fail	what error	how fixed it
-std_Invalid-Funds_SP	WhatTestis	Failure	how it fail	what error	how fixed it
-std_nonValid	WhatTestis	Failure	how it fail	what error	how fixed it
-std_NP	WhatTestis	Failure	how it fail	what error	how fixed it
-std_valid	WhatTestis	Failure	how it fail	what error	how fixed it
+ad_bill-over-2000	WhatTestis	Success			
+ad_bill-over-balance	WhatTestis	Success			
+ad_paybill	WhatTestis	Success			
+ad_SP	WhatTestis	Success			
+std_balance-drops-to-negative_SP	WhatTestis	Success			
+std_Bill-over-balace_SP	WhatTestis	Success			
+std_bill-over-Limit	WhatTestis	Success			
+std_InvalidCompany	WhatTestis	Success			
+std_Invalid-Funds_SP	WhatTestis	Success			
+std_nonValid	WhatTestis	Success			
+std_NP	WhatTestis	Success			
+std_valid	WhatTestis	Success			
 admin_transfer	WhatTestis	Success			
 negative_transfer	WhatTestis	Success			
 standard_greaterthan_transfer	WhatTestis	Success			

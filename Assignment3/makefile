@@ -12,6 +12,9 @@ clean:
 testing: compile
 	./testing.sh frontend Current_Accounts.bank BankAccountTransaction.txt Tests
 
+testingfull: compile
+	./testing.sh frontend Current_Accounts_Full.bank BankAccountTransaction.txt Tests
+
 login: compile
 	./testing.sh frontend Current_Accounts.bank BankAccountTransaction.txt Tests Login
 
@@ -21,7 +24,7 @@ withdrawal: compile
 create: compile
 	./testing.sh frontend Current_Accounts.bank BankAccountTransaction.txt Tests Create
 
-paybill: compile
+paybill:
 	./testing.sh frontend Current_Accounts.bank BankAccountTransaction.txt Tests paybill
 
 transfer: compile

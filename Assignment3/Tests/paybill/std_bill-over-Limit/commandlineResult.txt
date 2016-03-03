@@ -1,1 +1,1 @@
-paybill: Invalid Transaction(standard exception)
+paybill: Invalid Input

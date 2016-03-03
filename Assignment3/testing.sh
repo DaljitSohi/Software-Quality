@@ -47,26 +47,20 @@ do
 		echo $tests "Testing: Complete" >> log.txt
 		echo "" >> log.txt
 		
-		if [ -e $testfolder"/Result/"$outputfile ]; then
-			rm $testfolder"/Result/"$outputfile
-		fi
-		if [ -e $testfolder"/Result/"resultt.txt ]; then
-			rm $testfolder"/Result/"resultt.txt
-		fi
+		
 		# rm $testfolder"/Result/"$outputfile
 		# rm $testfolder"/Result/"resultt.txt
 
 		if [ "$status" == "" ]; then
 			echo -e "\e[32m  "$folder_name": "$tests "Test - Success" 
 			echo -e $tests"\tWhatTestis\tSuccess\t\t\t"  >> logChart.txt
-			rm $outputfile
-			rm resultt.txt
 		else
 			echo -e "\e[31m  "$folder_name": "$tests "Test - Failure"
 			echo -e $tests"\tWhatTestis\tFailure\thow it fail\twhat error\thow fixed it"  >> logChart.txt
-			mv $outputfile $testfolder"/Result/"$outputfile
-			mv resultt.txt $testfolder"/Result/"resultt.txt
+			
 		fi
+		mv $outputfile $testfolder"/Result/"$outputfile
+		mv resultt.txt $testfolder"/Result/"resultt.txt
 		# mkdir $testfolder"/Result"
 		
 	done

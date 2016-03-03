@@ -1,3 +1,3 @@
 login standard Daljit
-paybill 00001 "EC" 200.00
+paybill 00001 EC 200.00
 logout

@@ -1,4 +1,4 @@
 login standard Daljit-b
-paybill 00003 "TV" 500.00
+paybill 00003 TV 500.00
 logout
 

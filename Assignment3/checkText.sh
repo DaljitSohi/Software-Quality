@@ -12,4 +12,4 @@ echo -e "\tCode Result:"
 cat Result/BankAccountTransaction.txt 
 
 echo -e "\tCode CommandLine:"
-cat Result/resultt.txt
+cat Result/CommandLineResult.txt

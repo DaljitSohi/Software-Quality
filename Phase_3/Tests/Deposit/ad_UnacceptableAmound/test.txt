@@ -1,0 +1,3 @@
+login admin
+deposit Ryan-d 00025 -500.00
+logout

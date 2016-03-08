@@ -1,0 +1,4 @@
+login admin
+changeplan Sam 00666
+logout
+

@@ -1,0 +1,3 @@
+login admin
+paybill John-c 00027 CQ 3000.00
+logout

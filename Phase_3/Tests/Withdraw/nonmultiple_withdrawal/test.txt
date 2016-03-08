@@ -1,0 +1,3 @@
+login standard Sean
+withdrawal 00005 23.00
+logout

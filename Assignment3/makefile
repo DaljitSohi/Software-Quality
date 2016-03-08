@@ -6,6 +6,10 @@ run: compile
 	clear
 	./frontend Current_Accounts.bank BankAccountTransaction.txt Tests/Create/create_admin_only/test.txt
 	
+rrun:
+	clear
+	./frontend Current_Accounts.bank BankAccountTransaction.txt temp.txt
+	
 clean:
 	rm frontend
 
@@ -18,7 +22,7 @@ testingfull: compile
 login: compile
 	./testing.sh frontend Current_Accounts.bank BankAccountTransaction.txt Tests Login
 
-withdrawal: compile
+withdrawal:
 	./testing.sh frontend Current_Accounts.bank BankAccountTransaction.txt Tests Withdraw
 
 create: compile

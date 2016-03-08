@@ -1,0 +1,3 @@
+login standard Neil
+transfer 00004 00005 -5000.00
+logout

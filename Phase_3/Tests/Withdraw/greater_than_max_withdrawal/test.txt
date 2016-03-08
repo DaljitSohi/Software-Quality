@@ -1,0 +1,3 @@
+login standard Neil-a
+withdrawal 00006 600.00
+logout

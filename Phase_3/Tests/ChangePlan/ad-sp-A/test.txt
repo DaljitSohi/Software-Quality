@@ -1,0 +1,3 @@
+login admin
+changeplan Daljit-d 00026
+logout

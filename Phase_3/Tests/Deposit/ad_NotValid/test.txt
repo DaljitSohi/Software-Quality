@@ -1,0 +1,3 @@
+login admin
+deposit Jimmy 00352 200.00
+logout

@@ -1,0 +1,3 @@
+login admin
+paybill Nick-b 00013 CQ 0055.00
+logout

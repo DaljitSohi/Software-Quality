@@ -1,0 +1,3 @@
+login standard Sam
+paybill 00016 CQ 21.00
+logout

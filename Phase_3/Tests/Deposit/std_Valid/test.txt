@@ -1,0 +1,4 @@
+login standard Daljit
+deposit 00001 500.00
+logout
+

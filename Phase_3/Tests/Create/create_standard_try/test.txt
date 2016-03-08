@@ -1,0 +1,3 @@
+login standard Matt
+create Nick 400.00
+logout

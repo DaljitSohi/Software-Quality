@@ -1,0 +1,3 @@
+login admin
+withdrawal Neil 00004 700.00
+logout admin

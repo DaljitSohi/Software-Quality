@@ -8,11 +8,11 @@ class Interpreter
 	public Interpreter(String bankaccountfile)
 	{
 		Scanner fileInput = null;
+		bankAccounts = new ArrayList<BankAccount>();
 		try
 		{
 			//create the scanner with the bankaccount file
 			fileInput = new Scanner(new File(bankaccountfile));
-
 			//while there is a new line avaiable, create a bankaccount out of it
 			while(fileInput.hasNextLine())
 			{
@@ -28,7 +28,9 @@ class Interpreter
 		{
 			bankAccounts = null;
 			//if error reading the master bankaccount file, write out error 
-			System.out.println("Error, unable to read in the bank account file");
+			System.out.println("ERROR: unable to read in the bank account file");
+			System.out.println("ERROR: " + e);
+		
 			try
 			{
 				fileInput.close();
@@ -41,7 +43,18 @@ class Interpreter
 	{
 		if(bankAccounts != null)
 		{
+			if(token.getCommand() == 0 || token.getCommand() == 10)
+				return;
+
 			BankAccount account = search(token.getName());
+			if(account == null)
+			{
+				if(token.getCommand() == 5) //create
+					bankAccounts.add(Transaction.Create(token.getName(), token.getNumber(), token.getMoney()));
+				else
+					System.out.println("ERROR: Account doesn't exist");
+				return;
+			}
 			switch (token.getCommand())
 			{
 				case 1: //withdrawal
@@ -56,12 +69,9 @@ class Interpreter
 				case 4://deposit
 					account = Transaction.Deposit(account, token.getMoney());
 					break;
-				case 5://create
-					account = Transaction.Create(account, token.getMoney());
-					break;
 				case 6://delete
-					account = Transaction.Delete(account);
-					break;
+					bankAccounts.remove(account);
+					return;
 				case 7://disable
 					account = Transaction.Disable(account);
 					break;
@@ -71,48 +81,62 @@ class Interpreter
 				case 9://enable
 					account = Transaction.Enable(account);
 					break;
-				default:
-					return;
 			}
 			account.setTransactionNumber(account.getNumberofTransactions() + 1);
 		}
 		else
 		{
-			System.out.println("Error with Bank Account file");
+			System.out.println("ERROR: No Bank Accounts");
 		}
 	}
 
-
 	private BankAccount search(String name)
 	{
+		for(int cnt = 0; cnt < bankAccounts.size(); cnt++)
+		{
+			if(bankAccounts.get(cnt).getAccountName().compareTo(name) == 0)
+				return bankAccounts.get(cnt);
+		}
 		return null;
 	}
 
 	public void writeOutBankAccounts(String masterbankaccount, String currentbankaccount)
 	{
+		//if no bank accounts don't do anything
 		if(bankAccounts != null)
 		{
+			//set up outstreams for the master and current bank account files
 			PrintWriter master = null, current = null;
 			try
 			{
+				//open the files for master/current bank accounts
 				master = new PrintWriter(new BufferedWriter(new FileWriter(masterbankaccount)));
 				current = new PrintWriter(new BufferedWriter(new FileWriter(currentbankaccount)));
-
-				for(int cnt = 0; cnt < bankAccounts.size(); cnt++)
+				int cnt;
+				//write out to both files in the write format
+				for(cnt = 0; cnt < bankAccounts.size() - 1; cnt++)
 				{
 					BankAccount account = bankAccounts.get(cnt);
 					master.println(account.masterFileFormat());
 					current.println(account.currentFileFormat());
 				}
+				//write out the last account so no extra line is used
+				BankAccount account = bankAccounts.get(cnt);
+				master.print(account.masterFileFormat());
+				current.println(account.currentFileFormat());
+				current.print("00000 END_OF_FILE          A 00000.00 N");
+				
+				//close the files
 				master.close();
 				current.close();
 			}
 			catch (Exception e)
 			{
 				//if error writing to the master/current bankaccount file, write out error
-				System.out.println("Error, unable to write to the master/current bankaccount file");
+				System.out.println("ERROR: unable to write to the master/current bankaccount file");
 				try
 				{
+					//if error close the files
 					master.close();
 					current.close();
 				}
@@ -121,8 +145,15 @@ class Interpreter
 		}
 		else
 		{
-			System.out.println("Error with Bank Account file");
+			System.out.println("ERROR: No Bank Accounts");
 		}
-
 	}
+
+	public String toString()
+	{
+		for(int cnt = 0; cnt < bankAccounts.size(); cnt++)
+			System.out.println(bankAccounts.get(cnt));
+		return "";
+	}
+
 }

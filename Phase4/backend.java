@@ -5,10 +5,15 @@ class backend
 {
 	static public void main(String args[])
 	{
+
+		// BankAccount temp = new BankAccount("00001 Daljit               A 06666.66 0000 S");//1,"matt", true,true, 500.0f, 0);
+
+		// System.out.println(temp.masterFileFormat());
+		// System.out.println(temp.currentFileFormat());
 		//check to make sure there is at least 2 argument for the program
 		if(args.length < 2)
 		{
-			System.out.println("Error, please include the Transaction file, and the Master Bank Account file.");
+			System.out.println("ERROR: please include the Transaction file, and the Master Bank Account file.");
 			return;
 		}
 		//variables fo the transaction file and the master bankaccount file
@@ -46,7 +51,7 @@ class backend
 			catch (Exception e)
 			{
 				//if error mergeing files, write out error and stop program
-				System.out.println("Error, reading in mutiple files");
+				System.out.println("ERROR: reading in mutiple files");
 				try
 				{
 					mergedFile.close();
@@ -85,7 +90,8 @@ class backend
 		catch (Exception e)
 		{
 			//if error reading the transaction file, write out error and stop program
-			System.out.println("Error, unable to read in the transaction file");
+			System.out.println("ERROR: unable to read in the transaction file");
+			System.out.println("ERROR: " + e);
 			try
 			{
 				fileInput.close();
@@ -94,7 +100,7 @@ class backend
 			return;
 		}
 
-		//finish the program by writing out update bank accounts
+		// //finish the program by writing out update bank accounts
 		interpret.writeOutBankAccounts("MasterBankAccountsFile.bank","CurrentBankAccounts.bank");
 	}
 }

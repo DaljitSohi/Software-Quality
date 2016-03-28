@@ -114,7 +114,7 @@ class Transaction
 
 						float newBalance = account.getBalance() - transferAmount ;
 						if(newBalance < 0){
-							System.out.println("ERROR");
+							System.out.println("ERROR: Balance can not be negative.");
 						}
 						else{
 							account.setBalance(newBalance);
@@ -347,7 +347,7 @@ class Transaction
 					}
 					//if the bill amount is less than $2000.00
 					else{
-						billAmount += 0.05; //add a change of $0.05 to the billAmount.
+						billAmount += 0.10; //add a change of $0.05 to the billAmount.
 						//set Account balance to (current balance - billAmount)
 
 						//new account balance. After subtracting the bill

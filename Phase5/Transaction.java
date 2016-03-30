@@ -18,7 +18,7 @@ class Transaction
 		return new BankAccount(number, name, true, false, amount, 0);
 	}
 	
-	static public BankAccount Transfer(BankAccount account, float amount, boolean admin)
+	static public BankAccount Transfer(BankAccount account, float amount, boolean admin, boolean recieve)
 	{
 		/*
 		 * 1. check if bank accout is active. 
@@ -31,6 +31,11 @@ class Transaction
 		 * 
 		 */
 
+		if(recieve){
+			account.setBalance(account.getBalance()+amount);
+			return account;
+		}
+
 		//the amount we are transfering from an account.
 		float transferAmount = 0.0f;
 		if(amount > 0){
@@ -38,6 +43,7 @@ class Transaction
 		}
 		else{
 			System.out.println("ERROR: transfer amount is less than $0. Transfer amount must be greater than $0.");
+			return null;
 		}
 
 		//if the account is Active
@@ -142,6 +148,7 @@ class Transaction
 			withdrawalAmount = amount;
 		}else {
 			System.out.println("ERROR: Amount is not a multiple of 5.");
+			return null;
 		}
 
 		//if the account is active
@@ -245,6 +252,7 @@ class Transaction
 		}
 		else{
 			System.out.println("ERROR: Deposit amount must be more than $0.");
+			return null;
 		}
 		
 		
@@ -262,7 +270,7 @@ class Transaction
 
 				//standard access
 				else{
-					float newBalance = account.getBalance() + depositAmount;
+					float newBalance = account.getBalance() + depositAmount - 0.10f;
 					account.setBalance(newBalance);
 				}//end of access type -> std
 
@@ -278,7 +286,7 @@ class Transaction
 
 				//standard access
 				else{
-					float newBalance = account.getBalance() + depositAmount;
+					float newBalance = account.getBalance() + depositAmount  - 0.05f;
 					account.setBalance(newBalance);
 				}//end of access type -> std
 
@@ -313,6 +321,7 @@ class Transaction
 		//first thing to check is, if the amount is greater than 0.
 		if(!(amount > 0)){
 			System.out.println("ERROR: amount to pay has to be greater than 0.");
+			return null;
 		}
 		else{
 			billAmount = amount;
@@ -376,8 +385,11 @@ class Transaction
 						System.out.println("ERROR: transactions can not go through. + "
 								+ "Account Balance results to $0.00");
 					}
-					//set Account balance to (newBalance)
-					account.setBalance(newBalance);
+					else
+					{
+						//set Account balance to (newBalance)
+						account.setBalance(newBalance);
+					}
 				}// end of if for admin login
 
 				//if a standard login
@@ -397,8 +409,10 @@ class Transaction
 							System.out.println("ERROR: transactions can not go through. + "
 									+ "Account Balance results to $0.00");
 						}
-						//set Account balance to (newBalance)
-						account.setBalance(newBalance);
+						else//set Account balance to (newBalance)
+						{
+							account.setBalance(newBalance);
+						}
 					}
 				}
 			}
@@ -409,7 +423,7 @@ class Transaction
 		return account;
 	}
 	
-	static public BankAccount Changeplan(BankAccount account, String misc)
+	static public BankAccount Changeplan(BankAccount account)
 	{
 		account.setStudent(!account.isStudent());
 		return account;

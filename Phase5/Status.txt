@@ -1,0 +1,10 @@
+Token - complete
+BankAccount - complete
+Interpeter-
+	- constructor - complete
+	- search - complete
+	- interpet - complete
+	- getNewNumber - incomplete
+	- writeout - incomplete
+Bankend -
+	- main - incomplete

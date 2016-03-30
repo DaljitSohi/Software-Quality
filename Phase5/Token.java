@@ -15,15 +15,7 @@ class Token
 		money = Float.parseFloat(line.substring(30, 38));
 		misc = line.substring(39, 41);
 	}
-
-	public String toString()
-	{
-		String ret = "";
-
-		ret += command + ", " + name + ", " + number + ", " + money + ", " + misc;
-		return ret;
-	}
-
+	
 	int getCommand()
 	{
 		return command;

@@ -3,8 +3,9 @@ import java.util.*;
 
 class Interpreter
 {
-	ArrayList<BankAccount> bankAccounts = null;
+	public ArrayList<BankAccount> bankAccounts = null;
 	boolean admin;
+	boolean transfer;
 	public Interpreter(String bankaccountfile)
 	{
 		Scanner fileInput = null;
@@ -29,8 +30,6 @@ class Interpreter
 			bankAccounts = null;
 			//if error reading the master bankaccount file, write out error 
 			System.out.println("ERROR: unable to read in the bank account file");
-			System.out.println("ERROR: " + e);
-		
 			try
 			{
 				fileInput.close();
@@ -38,32 +37,45 @@ class Interpreter
 			catch (Exception e2){}
 		}
 		admin = false;
+		transfer = false;
 	}
 
-	public void interpret(Token token)
+	public BankAccount interpret(Token token)
 	{
 		if(bankAccounts != null)
 		{
 			if(token.getCommand() == 0)
 			{
 				admin = false;
-				return;
+				return null;
 			}
 			if(token.getCommand() == 10)
 			{
 				if(token.getMisc().compareTo("A ") == 0)
 					admin = true;
-				return;
+				return null;
 			}
 
 			BankAccount account = search(token.getName());
 			if(account == null)
 			{
-				if(token.getCommand() == 5) //create
-					bankAccounts.add(Transaction.Create(token.getName(), token.getNumber(), token.getMoney()));
+				if(token.getCommand() == 5)//create 
+				{
+					int number = getNewNumber();
+					if(number < 0)
+					{
+						System.out.println("ERROR: No More Accounts");
+						return null;
+					}
+					account = Transaction.Create(token.getName(), number, token.getMoney());
+					bankAccounts.add(account);
+					return account;
+				}
 				else
+				{
 					System.out.println("ERROR: Account doesn't exist");
-				return;
+					return null;
+				}
 			}
 			switch (token.getCommand())
 			{
@@ -71,8 +83,11 @@ class Interpreter
 					account = Transaction.Withdrawal(account, token.getMoney(), admin);
 					break;
 				case 2://transfer
-					account = Transaction.Transfer(account, token.getMoney(), admin);
-					break;
+					account = Transaction.Transfer(account, token.getMoney(), admin, transfer);
+					if(!transfer)
+						account.setTransactionNumber(account.getNumberofTransactions() + 1);
+					transfer = !transfer;
+					return account;
 				case 3://paybill
 					account = Transaction.Paybill(account, token.getMoney(), token.getMisc(), admin);
 					break;
@@ -81,27 +96,45 @@ class Interpreter
 					break;
 				case 6://delete
 					bankAccounts.remove(account);
-					return;
+					return null;
 				case 7://disable
 					account = Transaction.Disable(account);
 					break;
 				case 8://changeplan
-					account = Transaction.Changeplan(account, token.getMisc());
+					account = Transaction.Changeplan(account);
 					break;
 				case 9://enable
 					account = Transaction.Enable(account);
 					break;
 			}
 			account.setTransactionNumber(account.getNumberofTransactions() + 1);
+			transfer = false;
+			return account;
 		}
 		else
 		{
 			System.out.println("ERROR: No Bank Accounts");
+			return null;
 		}
 	}
 
-	private BankAccount search(String name)
+	public int getNewNumber()
 	{
+		if(bankAccounts == null)
+			return -1;
+		int[] frequency = new int[100000];
+		for(int cnt = 0; cnt < bankAccounts.size(); cnt++)
+			frequency[bankAccounts.get(cnt).getAccountNumber()]++;
+		for(int cnt = 1; cnt < 100000; cnt++)
+			if(frequency[cnt] == 0)
+				return cnt;
+		return -1;
+	}
+
+	public BankAccount search(String name)
+	{
+		if(bankAccounts == null)
+			return null;
 		for(int cnt = 0; cnt < bankAccounts.size(); cnt++)
 		{
 			if(bankAccounts.get(cnt).getAccountName().compareTo(name) == 0)
@@ -158,12 +191,4 @@ class Interpreter
 			System.out.println("ERROR: No Bank Accounts");
 		}
 	}
-
-	public String toString()
-	{
-		for(int cnt = 0; cnt < bankAccounts.size(); cnt++)
-			System.out.println(bankAccounts.get(cnt));
-		return "";
-	}
-
 }

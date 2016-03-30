@@ -26,15 +26,7 @@ class BankAccount
 		student = stud;
 	}
 
-
-	public String toString()
-	{
-		String ret = "";
-
-		ret += number + ", " + name + ", " +active + ", " + student + ", " +balance + ", " +numTransactions;
-		return ret;
-	}
-
+	
 	int getNumberofTransactions()
 	{
 		return numTransactions;
@@ -62,7 +54,7 @@ class BankAccount
 
 	boolean isStudent()
 	{
-		return active;
+		return student;
 	}
 
 
@@ -93,39 +85,26 @@ class BankAccount
 
 		//set up number
 		String temp = "" + number;
-		if(temp.length() > 5)
+
+		//add "0" to the begging of the number if needed
+		String strtemp = "";
+		for(int cnt = 0; cnt < 5 - temp.length(); cnt++)
 		{
-			//if number > 5 the take last 5 numbers
-			temp = temp.substring(temp.length() -6, temp.length()-1);
+			strtemp += "0"; 
 		}
-		else
-		{
-			//add "0" to the begging of the number if needed
-			String strtemp = "";
-			for(int cnt = 0; cnt < 5 - temp.length(); cnt++)
-			{
-				strtemp += "0"; 
-			}
-			temp = strtemp + temp;
-		}
+		temp = strtemp + temp;
 		ret += temp + " ";
 
 		//set up account holder name
 		temp = name;
-		if(temp.length() > 20)
+
+		//add " " at the end
+		int length = 20 - temp.length();
+		for(int cnt = 0; cnt < length; cnt++)
 		{
-			//if name > 20, trunacte to the first 20
-			temp = temp.substring(0, 20);
+			temp += " ";
 		}
-		else
-		{
-			//add " " at the end
-			int length = 20 - temp.length();
-			for(int cnt = 0; cnt < length; cnt++)
-			{
-				temp += " ";
-			}
-		}
+		
 		ret += temp + " ";
 
 		//set up active
@@ -137,40 +116,28 @@ class BankAccount
 		//set up money
 		temp = String.format("%.02f", balance);
 
-		if(temp.length() > 8)
+		
+		//add "0" to the begging of the number if needed
+		strtemp = "";
+		for(int cnt = 0; cnt < 8 - temp.length(); cnt++)
 		{
-			//if number > 8 the take last 8 numbers
-			temp = temp.substring(temp.length() -9, temp.length()-1);
+			strtemp += "0"; 
 		}
-		else
-		{
-			//add "0" to the begging of the number if needed
-			String strtemp = "";
-			for(int cnt = 0; cnt < 8 - temp.length(); cnt++)
-			{
-				strtemp += "0"; 
-			}
-			temp = strtemp + temp;
-		}
+		temp = strtemp + temp;
+		
 		ret += temp + " ";
 
 		//set up total transactions
 		temp = "" + numTransactions;
-		if(temp.length() > 4)
+		
+		//add "0" to the begging of the number if needed
+		strtemp = "";
+		for(int cnt = 0; cnt < 4 - temp.length(); cnt++)
 		{
-			//if number > 4 the take last 4 numbers
-			temp = temp.substring(temp.length() -5, temp.length()-1);
+			strtemp += "0"; 
 		}
-		else
-		{
-			//add "0" to the begging of the number if needed
-			String strtemp = "";
-			for(int cnt = 0; cnt < 4 - temp.length(); cnt++)
-			{
-				strtemp += "0"; 
-			}
-			temp = strtemp + temp;
-		}
+		temp = strtemp + temp;
+		
 		ret += temp + " ";
 		
 		//set up active
@@ -188,39 +155,27 @@ class BankAccount
 
 		//set up number
 		String temp = "" + number;
-		if(temp.length() > 5)
+		
+		//add "0" to the begging of the number if needed
+		String strtemp = "";
+		for(int cnt = 0; cnt < 5 - temp.length(); cnt++)
 		{
-			//if number > 5 the take last 5 numbers
-			temp = temp.substring(temp.length() -6, temp.length()-1);
+			strtemp += "0"; 
 		}
-		else
-		{
-			//add "0" to the begging of the number if needed
-			String strtemp = "";
-			for(int cnt = 0; cnt < 5 - temp.length(); cnt++)
-			{
-				strtemp += "0"; 
-			}
-			temp = strtemp + temp;
-		}
+		temp = strtemp + temp;
+		
 		ret += temp + " ";
 
 		//set up account holder name
 		temp = name;
-		if(temp.length() > 20)
+
+		//add " " at the end
+		int length = 20 - temp.length();
+		for(int cnt = 0; cnt < length; cnt++)
 		{
-			//if name > 20, trunacte to the first 20
-			temp = temp.substring(0, 20);
+			temp += " ";
 		}
-		else
-		{
-			//add " " at the end
-			int length = 20 - temp.length();
-			for(int cnt = 0; cnt < length; cnt++)
-			{
-				temp += " ";
-			}
-		}
+	
 		ret += temp + " ";
 
 		//set up active
@@ -232,21 +187,14 @@ class BankAccount
 		//set up money
 		temp = String.format("%.02f", balance);
 
-		if(temp.length() > 8)
+		//add "0" to the begging of the number if needed
+		strtemp = "";
+		for(int cnt = 0; cnt < 8 - temp.length(); cnt++)
 		{
-			//if number > 8 the take last 8 numbers
-			temp = temp.substring(temp.length() -9, temp.length()-1);
+			strtemp += "0"; 
 		}
-		else
-		{
-			//add "0" to the begging of the number if needed
-			String strtemp = "";
-			for(int cnt = 0; cnt < 8 - temp.length(); cnt++)
-			{
-				strtemp += "0"; 
-			}
-			temp = strtemp + temp;
-		}
+		temp = strtemp + temp;
+		
 		ret += temp + " ";
 
 		//set up active
